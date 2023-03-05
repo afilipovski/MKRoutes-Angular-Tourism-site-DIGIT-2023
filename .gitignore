@@ -43,3 +43,7 @@ Thumbs.db
 
 #.vscode
 /.vscode
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
