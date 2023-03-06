@@ -8,15 +8,11 @@
 img {
   width: 40px;
   display: inline-block;
-  margin-right: 8px;
   padding: 6px;
-}
-img:last-child{
-  margin-right: 10px;
 }
 
 a {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 32.5px;
 }
 
@@ -24,6 +20,9 @@ strong {
   letter-spacing: -4px;
 }
 
-.bgNav{
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.0));
+.bgNav {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
 }

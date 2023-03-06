@@ -1,0 +1,12 @@
+<div class="flex justify-around">
+  <ng-container *ngFor="let city of cities">
+    <button
+      class="cityButton"
+      (click)="click(city.name)"
+      [ngStyle]="{ backgroundImage: 'url(' + city.img + ')' }"
+      appHighlight
+    >
+      <a class="text-3xl">{{ city.name }}</a>
+    </button>
+  </ng-container>
+</div>

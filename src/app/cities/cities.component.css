@@ -1,0 +1,13 @@
+.cityButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 20vw;
+  width: 20vw;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}

@@ -12,9 +12,10 @@ import { HomeComponent } from './home/home.component';
 // HTTP POVICI
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
+import { CitiesComponent } from './cities/cities.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SearchComponent, HighlightDirective, HomeComponent, WeatherComponent],
+  declarations: [AppComponent, NavbarComponent, SearchComponent, HighlightDirective, HomeComponent, WeatherComponent, CitiesComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
