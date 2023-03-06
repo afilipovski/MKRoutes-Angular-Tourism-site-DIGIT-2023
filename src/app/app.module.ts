@@ -4,16 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
+import { HomeComponent } from './home/home.component';
 
 // HTTP POVICI
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
 
-// FORMI
-import { FormsModule } from '@angular/forms';
-
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, WeatherComponent],
+  declarations: [AppComponent, NavbarComponent, SearchComponent, HighlightDirective, HomeComponent, WeatherComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
