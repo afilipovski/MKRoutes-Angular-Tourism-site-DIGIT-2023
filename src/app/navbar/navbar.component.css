@@ -1,0 +1,8 @@
+#container {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+a {
+  margin-inline: 5px;
+}
