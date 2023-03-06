@@ -9,9 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './highlight.directive';
 import { HomeComponent } from './home/home.component';
 
+// HTTP POVICI
+import { HttpClientModule } from '@angular/common/http';
+import { WeatherComponent } from './weather/weather.component';
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SearchComponent, HighlightDirective, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [AppComponent, NavbarComponent, SearchComponent, HighlightDirective, HomeComponent, WeatherComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
