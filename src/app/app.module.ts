@@ -8,10 +8,12 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { SecondPageComponent } from './second-page/second-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SecondPageComponent
   ],
   imports: [
     BrowserModule,
