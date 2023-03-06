@@ -1,3 +1,31 @@
 #resultContainer:empty {
   display: none;
 }
+#resultContainer{
+  font-family: Manrope;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 20px;
+}
+#resultContainer p {
+  border-bottom: solid black 2px;
+}
+
+p:hover {
+  background-color: mediumpurple;
+}
+#resultContainer p:last-child{
+  border-bottom: none;
+}
+input{
+  background-color: rgba(0,0,0,0);
+  font-family: Manrope;
+  text-align: center;
+  width: 50vw;
+  font-size: 5vw;
+}
+input::placeholder{
+  text-align: center;
+  color: rgba(23, 23, 23, 0.2);
+
+}

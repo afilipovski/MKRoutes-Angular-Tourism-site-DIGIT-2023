@@ -1,9 +1,9 @@
 <input
   [(ngModel)]="searchQuery"
   (ngModelChange)="change($event)"
-  class="border-black border-2"
+  class=" rounded frosted" placeholder="Search Cities..."
 />
-<div id="resultContainer" class="border border-black rounded-sm">
+<div id="resultContainer" class="rounded-sm frosted">
   <ng-container *ngFor="let route of routes" class="test">
     <ng-container
       *ngIf="
@@ -11,7 +11,7 @@
         route.name.toUpperCase().includes(searchQuery.toUpperCase())
       "
     >
-      <p appHighlight>{{ route.name }}</p>
+      <p >{{ route.name }}</p>
     </ng-container>
   </ng-container>
 </div>
