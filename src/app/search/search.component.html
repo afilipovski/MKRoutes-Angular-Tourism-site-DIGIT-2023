@@ -1,0 +1,17 @@
+<input
+  [(ngModel)]="searchQuery"
+  (ngModelChange)="change($event)"
+  class="border-black border-2"
+/>
+<div id="resultContainer" class="border border-black rounded-sm">
+  <ng-container *ngFor="let route of routes" class="test">
+    <ng-container
+      *ngIf="
+        searchQuery !== '' &&
+        route.name.toUpperCase().includes(searchQuery.toUpperCase())
+      "
+    >
+      <p appHighlight>{{ route.name }}</p>
+    </ng-container>
+  </ng-container>
+</div>
