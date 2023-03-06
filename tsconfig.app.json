@@ -4,11 +4,8 @@
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "types": []
+    //json files
   },
-  "files": [
-    "src/main.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ]
+  "files": ["src/main.ts"],
+  "include": ["src/**/*.d.ts"]
 }
