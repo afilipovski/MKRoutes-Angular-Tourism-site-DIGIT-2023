@@ -1,8 +1,21 @@
 #container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-color: transparent;
+  margin-top: 10px;
+  margin-left: 10px;
 }
-a {
-  margin-inline: 5px;
+img {
+  width: 50px;
+  display: inline-block;
+  margin-right: 8px;
+  padding: 6px;
+}
+img:last-child{
+  margin-right: 10px;
+}
+.frosted{
+  border-radius: 0.5rem;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.3));
+  backdrop-filter: blur(10px);
 }
