@@ -14,18 +14,16 @@ export class PlaceComponent {
     private route: ActivatedRoute,
     private location: Location
   ) {}
+
   ngOnInit():void {
-    this.getPlace();
+    const placeName = this.route.snapshot.paramMap.get("id");
+    
+    this.details = gradovi.filter(grad => grad.name.toLowerCase() === placeName)[0]
+    
+    if (!this.details) {
+      this.location.back();
+    }
   }
 
   details?:IGrad;
-
-  getPlace(): void {
-    const placeName = this.route.snapshot.paramMap.get("id");
-    console.log(placeName);
-    
-    this.details = gradovi.filter(grad => grad.name.toLowerCase() === placeName)[0]
-    console.log(this.details);
-    
-  }
 }

@@ -1,12 +1,18 @@
-.text {
-    max-width: min(100vw, 400px);
-}
-img {
-    max-width: min(100vw, 300px);
-}
 p {
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+#full-page-container {
+    height: 100vh;
+    background-size: cover;
+}
+main {
+    max-width: min(100vw, 900px);
+    padding: 20px 60px;
+    margin: auto;
+}
+.basic>* {
+    margin: 0 20px
 }

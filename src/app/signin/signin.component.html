@@ -1,0 +1,14 @@
+<div *ngIf="!loading">
+    <div *ngIf="user">
+        Logged in as {{user.email}}
+        <button (click)="logout()">Log out</button>
+    </div>
+    <div *ngIf="!user">
+        <div>Log in:</div>
+        <div>Email: <input type="text" [(ngModel)] = "email"></div>
+        <div>Password: <input type="text" [(ngModel)] = "password"></div>
+        <div *ngIf="errMsg">{{errMsg}}</div>
+        <button (click)="login()">Log in</button>
+        <button routerLink="/signup/">Sign up</button>
+    </div>
+</div>

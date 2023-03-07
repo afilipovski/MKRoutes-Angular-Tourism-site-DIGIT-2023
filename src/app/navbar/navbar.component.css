@@ -25,3 +25,16 @@ strong {
     rgba(255, 255, 255, 0)
   );
 }
+
+mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+app-signin {
+  position: absolute;
+  top: 45px;
+  right: 90px;
+  z-index: 10;
+}
