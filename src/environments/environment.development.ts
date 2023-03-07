@@ -6,4 +6,5 @@ export const environment = {
     apiKey: 'AIzaSyBDHCLbd6wNLzsQc_eLo2CEK-QsoS2kTsU',
     authDomain: 'digit-2023.firebaseapp.com',
     messagingSenderId: '368574663859',
+    databaseURL: "https://digit-2023-default-rtdb.europe-west1.firebasedatabase.app"
   },};

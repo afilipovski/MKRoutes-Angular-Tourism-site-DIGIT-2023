@@ -1,13 +1,12 @@
-<div *ngIf="details" style="background-image: url({{details.img}});" id="full-page-container">
+<div *ngIf="placeDetails" style="background-image: url({{placeDetails.img}});" id="full-page-container">
     <app-navbar></app-navbar>
-    <main class="rounded frosted ng-pristine ng-valid ng-touched">
-        <div class="text">
-            <div class="basic flex flex-row items-center justify-center flex-wrap">
-                <h1 class="text-5xl">{{details.name}}</h1>
-                <app-weather [lat] = "details.lat" [lon] = "details.lon"></app-weather>
-            </div>
-            <p>{{details.desc}}</p>
+    <div class="text">
+        <div class="basic flex flex-row items-center justify-center flex-wrap">
+            <h1 class="text-5xl font-bold">{{placeDetails.name}}</h1>
+            <app-weather [lat]="placeDetails.lat" [lon]="placeDetails.lon"></app-weather>
         </div>
-        <app-star-rating></app-star-rating>
-    </main>
+        <p>{{placeDetails.desc}}</p>
+    </div>
+    <mat-icon fontIcon="bookmark_outline"></mat-icon>
+    <app-star-rating></app-star-rating>
 </div>
