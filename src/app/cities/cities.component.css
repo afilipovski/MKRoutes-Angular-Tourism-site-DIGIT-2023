@@ -1,13 +1,15 @@
 .cityButton {
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: white;
-  height: 20vw;
-  width: 20vw;
-  border-radius: 10px;
+  height: 25vw;
+  width: 19vw;
+  border-radius: 8px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   color: white;
+  margin-block: 20px;
+}
+.cityName {
+  margin-top: 5vw;
 }

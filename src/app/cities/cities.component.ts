@@ -8,8 +8,9 @@ import { gradovi } from '../../assets/routes';
 })
 export class CitiesComponent {
   cities = gradovi;
+  selectedCity = this.cities[0];
 
-  click(name: string) {
-    console.log(name);
+  click(city: any) {
+    this.selectedCity = city;
   }
 }

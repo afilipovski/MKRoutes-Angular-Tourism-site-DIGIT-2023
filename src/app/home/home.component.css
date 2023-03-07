@@ -1,0 +1,9 @@
+#landingDiv {
+  background-image: url("../../assets/bg2.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+#citiesDiv {
+  background-color: rgb(241, 239, 239);
+}

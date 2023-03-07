@@ -13,9 +13,19 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
 import { CitiesComponent } from './cities/cities.component';
+import { CityInfoComponent } from './city-info/city-info.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SearchComponent, HighlightDirective, HomeComponent, WeatherComponent, CitiesComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    SearchComponent,
+    HighlightDirective,
+    HomeComponent,
+    WeatherComponent,
+    CitiesComponent,
+    CityInfoComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

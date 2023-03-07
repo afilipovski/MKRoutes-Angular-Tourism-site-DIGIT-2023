@@ -1,12 +1,15 @@
 <div class="flex justify-around">
   <ng-container *ngFor="let city of cities">
     <button
-      class="cityButton"
-      (click)="click(city.name)"
+      class="cityButton flex flex-col"
+      (click)="click(city)"
       [ngStyle]="{ backgroundImage: 'url(' + city.img + ')' }"
       appHighlight
     >
-      <a class="text-3xl">{{ city.name }}</a>
+      <p class="text-3xl cityName">{{ city.name }}</p>
     </button>
   </ng-container>
+</div>
+<div>
+  <app-city-info [selectedCity]="selectedCity"></app-city-info>
 </div>

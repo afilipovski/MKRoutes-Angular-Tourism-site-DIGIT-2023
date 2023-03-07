@@ -3,17 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&family=Quicksand:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&family=Quicksand:wght@500&display=swap");
 
-body{
-  background-image: url("assets/bg2.jpg");
-  background-size: cover;
-}
-
-.frosted{
+.frosted {
   border-radius: 0.5rem;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.3));
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.34),
+    rgba(255, 255, 255, 0.3)
+  );
   backdrop-filter: blur(10px);
 }
-
-
