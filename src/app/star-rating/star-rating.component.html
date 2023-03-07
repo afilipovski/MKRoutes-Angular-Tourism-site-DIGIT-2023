@@ -1,3 +1,19 @@
-<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star"></mat-icon>
-<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star_half"></mat-icon>
-<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star_outline"></mat-icon>
+<div class="container" (click)="clickEvent()" (mouseleave)="hoverEvent(rating)">
+<span class="base" *ngFor="let index of starsArr">
+    <span (mouseover)="hoverEvent(index + 1/2)" class="lefthalf"></span>
+    <span (mouseover)="hoverEvent(index + 1)"class="righthalf"></span>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" 
+    fontIcon="{{
+        index < tempRating ? 
+            index < tempRating-0.5 ?
+                'star' :
+                'star_half'
+        : 'star_outline'
+    }}"></mat-icon>
+</span>
+</div>
+<div *ngIf="rating">
+    <mat-form-field>
+        <textarea matInput placeholder="Enter your review..."></textarea>
+    </mat-form-field>
+</div>

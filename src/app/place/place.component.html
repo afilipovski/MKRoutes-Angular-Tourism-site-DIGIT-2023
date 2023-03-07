@@ -1,6 +1,14 @@
+<app-navbar></app-navbar>
 <div *ngIf="details">
-    <h1 class="text-5xl">{{details.name}}</h1>
-
-    <app-weather [lat] = "details.lat" [lon] = "details.lon"></app-weather>
+    <div class="flex">
+        <div class="text">
+            <div class="basic flex flex-row items-center justify-between flex-wrap">
+                <h1 class="text-5xl">{{details.name}}</h1>
+                <app-weather [lat] = "details.lat" [lon] = "details.lon"></app-weather>
+            </div>
+            <p>{{details.desc}}</p>
+        </div>
+        <img src="{{details.img}}" alt="">
+    </div>
     <app-star-rating></app-star-rating>
 </div>
