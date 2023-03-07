@@ -13,6 +13,14 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
 import { CitiesComponent } from './cities/cities.component';
+import { PlaceComponent } from './place/place.component';
+import { StarRatingComponent } from './star-rating/star-rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// MATERIAL UI
+
+import { MatIconModule } from '@angular/material/icon';
+
 import { CityInfoComponent } from './city-info/city-info.component';
 
 @NgModule({
@@ -24,9 +32,18 @@ import { CityInfoComponent } from './city-info/city-info.component';
     HomeComponent,
     WeatherComponent,
     CitiesComponent,
+    PlaceComponent,
+    StarRatingComponent,
     CityInfoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

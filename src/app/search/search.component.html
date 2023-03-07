@@ -11,7 +11,7 @@
         route.name.toUpperCase().includes(searchQuery.toUpperCase())
       "
     >
-      <p >{{ route.name }}</p>
+      <p routerLink="/place/{{route.name.toLowerCase()}}" >{{ route.name }}</p>
     </ng-container>
   </ng-container>
 </div>

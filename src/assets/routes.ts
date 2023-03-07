@@ -1,4 +1,6 @@
-export let gradovi: { name: string; lat: number; lon: number; img: string }[] =
+import { IGrad } from "../app/grad"
+
+export let gradovi: IGrad[] =
   [
     {
       name: 'Skopje',

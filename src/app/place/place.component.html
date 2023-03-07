@@ -1,0 +1,6 @@
+<div *ngIf="details">
+    <h1 class="text-5xl">{{details.name}}</h1>
+
+    <app-weather [lat] = "details.lat" [lon] = "details.lon"></app-weather>
+    <app-star-rating></app-star-rating>
+</div>
