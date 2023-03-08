@@ -12,6 +12,10 @@
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 18px;
+
+}
+.wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 header {
