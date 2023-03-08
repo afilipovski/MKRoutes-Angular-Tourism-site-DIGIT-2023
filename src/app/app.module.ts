@@ -32,6 +32,7 @@ import { SignupComponent } from './signup/signup.component';
 
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { SigninComponent } from './signin/signin.component';
+import { LocationCardsComponent } from './location-cards/location-cards.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { SigninComponent } from './signin/signin.component';
     StarRatingComponent,
     SignupComponent,
     SigninComponent,
+    LocationCardsComponent,
   ],
   imports: [
     BrowserModule,
