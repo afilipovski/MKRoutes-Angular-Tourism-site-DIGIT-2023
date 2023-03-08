@@ -6,8 +6,8 @@
     <button
       (mouseover)="signInVisible = true"
       (mouseleave)="signInVisible = false"
-      class="flex flex-col justify-center" title="User">
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
+      class="flex flex-col justify-center mr-[8px]" title="User">
+      <img src="assets/account.svg"/>
       <app-signin *ngIf="signInVisible"></app-signin>
     </button>
     <button class="mr-[8px]" title="Search locations">

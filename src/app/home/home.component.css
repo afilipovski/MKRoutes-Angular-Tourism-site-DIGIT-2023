@@ -12,7 +12,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 18px;
-  background-image: url("../../assets/para3.jpg");
+  background-color: #000002;
 
 }
 .wrapper::-webkit-scrollbar {
