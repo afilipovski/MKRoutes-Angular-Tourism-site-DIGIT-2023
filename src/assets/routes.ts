@@ -34,11 +34,13 @@ export let gradovi: IGrad[] = [
     lat: 41.1811,
     lon: 22.7227,
     img: 'https://pix10.agoda.net/geo/city/665594/1_665594_04.jpg?ca=7&ce=1&s=1920x822',
+    desc: '',
   },
   {
     name: 'Prespa',
     lat: 40.8833,
     lon: 21.0222,
     img: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Lake_Prespa_from_Slivnica_Monastery_01.JPG',
+    desc: '',
   },
 ];
