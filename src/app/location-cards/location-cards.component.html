@@ -9,13 +9,15 @@
   (scrolled)="onScroll()"
 >
   <ng-container *ngFor="let location of locations">
-    <button
-      class="cityButton flex flex-col shrink-0"
-      (click)="click(location)"
-      [ngStyle]="{ backgroundImage: 'url(' + location.img + ')' }"
-      appHighlight
-    >
-      <p class="text-3xl cityName">{{ location.name }}</p>
-    </button>
+    <ng-container *ngIf="filter != 'none' && location.type === filter">
+      <button
+        class="cityButton flex flex-col shrink-0"
+        (click)="click(location)"
+        [ngStyle]="{ backgroundImage: 'url(' + location.img + ')' }"
+        appHighlight
+      >
+        <p class="text-3xl cityName">{{ location.name }}</p>
+      </button>
+    </ng-container>
   </ng-container>
 </div>

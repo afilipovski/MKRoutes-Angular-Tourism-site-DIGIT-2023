@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IGrad } from '../grad';
 import { gradovi } from '../../assets/routes';
 
@@ -10,11 +10,14 @@ import { gradovi } from '../../assets/routes';
 export class LocationCardsComponent {
   @Input() locations: IGrad[] = [];
   @Input() selectedLocation: IGrad = gradovi[0];
+  @Output() selectedLocationChange = new EventEmitter<IGrad>();
+  @Input() filter: string = 'none';
 
   constructor() {}
 
   click(city: IGrad) {
     this.selectedLocation = city;
+    this.selectedLocationChange.emit(this.selectedLocation);
   }
 
   onScroll() {

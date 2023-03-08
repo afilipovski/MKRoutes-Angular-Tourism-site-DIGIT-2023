@@ -3,7 +3,7 @@
   [ngStyle]="{
     backgroundImage:
       'radial-gradient(rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.6)), url(' +
-      selectedCity.img +
+      selectedCity.bgImage +
       ')'
   }"
   class="flex row"
@@ -28,7 +28,8 @@
   <div class="mb-[150px] overflow-hidden">
     <app-location-cards
       [locations]="cities"
-      [selectedLocation]="selectedCity"
+      [(selectedLocation)]="selectedCity"
+      filter="city"
     ></app-location-cards>
   </div>
 </div>
