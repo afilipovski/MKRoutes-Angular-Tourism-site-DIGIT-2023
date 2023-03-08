@@ -15,13 +15,9 @@ export class WeatherComponent {
 
   constructor(private weatherService : WeatherService) {}
   ngOnInit() {
-    console.log("RABOTI?");
     
     this.weatherService.getWeather(this.lat, this.lon).subscribe(
       r => {
-        console.log(r);
-        console.log(r["weather"][0]["icon"]);
-        
         this.weather = {
           img: `https://afilipovski.github.io/meteo-vitals/images/weather/${r["weather"][0]["icon"]}@2x.png`,
           desc: r["weather"][0]["description"],

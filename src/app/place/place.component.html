@@ -2,16 +2,19 @@
     <app-navbar></app-navbar>
     <div class="text">
         <div class="basic flex flex-row items-center justify-center flex-wrap">
+            <mat-icon (click)="toggleBookmark()" fontIcon="{{userControls.bookmarked ? 'bookmark' : 'bookmark_outline'}}"></mat-icon>
+            <app-star-rating></app-star-rating>
             <h1 class="text-5xl font-bold">{{placeDetails.name}}</h1>
             <app-weather *ngIf="placeDetails.lat && placeDetails.lon" [lat]="placeDetails.lat" [lon]="placeDetails.lon"></app-weather>
         </div>
         <p>{{placeDetails.desc}}</p>
     </div>
-    <!-- <mat-icon fontIcon="bookmark_outline"></mat-icon>
-    <app-star-rating></app-star-rating> -->
 </div>
 <div class="detailed-view" *ngIf="sights">
     <div *ngFor="let sight of sights">
         {{sight.name}}
+    </div>
+    <div *ngFor="let ax of accommodation">
+        {{ax.name}}
     </div>
 </div>

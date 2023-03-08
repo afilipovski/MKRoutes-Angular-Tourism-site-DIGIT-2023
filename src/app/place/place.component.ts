@@ -3,9 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { gradovi } from 'src/assets/routes';
 import { IGrad } from '../grad';
-
+import { UserControlsService } from '../user-controls.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-place',
@@ -16,28 +15,36 @@ export class PlaceComponent {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private auth : AngularFireAuth,
-    private db : AngularFireDatabase
+    private ucs : UserControlsService,
+    private afa : AngularFireAuth
   ) {}
 
+  placeName : string = "";
   placeDetails?:IGrad;
 
   sights ?: IGrad[];
   accommodation ?: IGrad[];
 
   userControls : any = {
-    bookmark: false,
+    bookmarked: false,
     reviewStars: 0,
     reviewText: ""
   }
 
+  uid ?: string | null | undefined;
+
+  toggleBookmark() {
+    this.userControls.bookmarked = !this.userControls.bookmarked;
+    this.ucs.setDetails(this.uid, this.placeName, this.userControls);
+  }
   ngOnInit():void {
-    const placeName = this.route.snapshot.paramMap.get("id");
+    this.placeName = this.route.snapshot.paramMap.get("id") || "";
     
-    this.placeDetails = gradovi.filter(grad => grad.name.toLowerCase() === placeName)[0]
+    this.placeDetails = gradovi.filter(grad => grad.name.toLowerCase() === this.placeName)[0]
     
-    if (!this.placeDetails) {
+    if (!this.placeName || !this.placeDetails) {
       this.location.back();
+      return;
     }
 
     if (this.placeDetails.sights) {
@@ -46,11 +53,12 @@ export class PlaceComponent {
     if (this.placeDetails.accommodation) {
       this.accommodation = gradovi.filter(h => this.placeDetails?.accommodation?.includes(h.name))
     }
-
-    this.auth.user.subscribe(user => {
-      let ref = this.db.database.ref(user!.uid);
-      ref.get().then(snapshot => {
-        this.userControls = snapshot;
+    
+    this.afa.onAuthStateChanged(user => {
+      this.uid = user?.uid;
+      this.ucs.getPlaceDetails(this.uid, this.placeName).then(res => {
+        this.userControls = res;
+        console.log(res); 
       })
     })
   }
