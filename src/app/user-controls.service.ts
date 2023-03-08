@@ -27,14 +27,55 @@ export class UserControlsService {
     }
     return defaultObject;
   }
+  
+  async getLogs(uid:string | undefined | null) : Promise<any> {
+    let defaultList : any = [];
+    let logsRef = this.afd.database.ref(`${uid}/logs`);
+    
+    if (!uid) {
+      return defaultList;
+    }
+    let data = await logsRef.get();
+    return Object.values(data.exportVal());
+  }
 
   setBookmarked(uid: string | null | undefined, placeName: string, value:boolean) {
     let ref = this.afd.database.ref(`${uid}/${placeName}/bookmarked`);
     ref.set(value);
+
+    let logsRef = this.afd.database.ref(`${uid}/logs`)
+    if (value) {
+      logsRef.push({
+        timestamp: Date.now(),
+        place: placeName
+      })
+    } else {
+      this.getLogs(uid).then(array => {
+        console.log(array);
+        
+        array = array.filter((log: { place: string; }) => log.place !== placeName)
+        logsRef.set(array);
+      })
+    }
+
+  }
+  async getStars(placeName: string) : Promise<any> {
+    let ref = this.afd.database.ref(`ratings/${placeName}`);
+    let data : number[] = Object.values((await ref.get()).exportVal());
+
+    if (!data.length) {
+      return null;
+    }
+    console.log(data);
+    
+    return data.reduce((a,b) => a + b, 0) / data.length;
   }
   setStars(uid: string | null | undefined, placeName: string, value:number) {
     let ref = this.afd.database.ref(`${uid}/${placeName}/reviewStars`);
     ref.set(value);
+
+    let cumulativeRatingRef = this.afd.database.ref(`ratings/${placeName}/${uid}`);
+    cumulativeRatingRef.set(value);
   }
   setText(uid: string | null | undefined, placeName: string, value:string) {
     let ref = this.afd.database.ref(`${uid}/${placeName}/reviewText`);

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IGrad } from '../grad';
 import { gradovi } from '../../assets/routes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-location-cards',
@@ -13,9 +14,12 @@ export class LocationCardsComponent {
   @Output() selectedLocationChange = new EventEmitter<IGrad>();
   @Input() filter: string = 'none';
 
-  constructor() {}
+  constructor(private router : Router) {}
 
   click(city: IGrad) {
+    if (this.filter !== 'city') {
+      this.router.navigate([`/place/${city.name.toLowerCase()}`])
+    }
     this.selectedLocation = city;
     this.selectedLocationChange.emit(this.selectedLocation);
   }

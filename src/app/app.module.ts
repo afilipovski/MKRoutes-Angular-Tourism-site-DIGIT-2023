@@ -35,6 +35,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { SigninComponent } from './signin/signin.component';
 import { LocationCardsComponent } from './location-cards/location-cards.component';
 import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
+import { BookmarksComponent } from './bookmarks/bookmarks.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
     SigninComponent,
     LocationCardsComponent,
     ErrorDialogComponent,
+    BookmarksComponent,
   ],
   imports: [
     BrowserModule,

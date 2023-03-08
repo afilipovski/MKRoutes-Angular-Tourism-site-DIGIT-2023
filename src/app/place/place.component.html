@@ -8,23 +8,27 @@
             <app-weather *ngIf="placeDetails.lat && placeDetails.lon" [lat]="placeDetails.lat" [lon]="placeDetails.lon" class="justify-self-end"></app-weather>
         </div>
         <p>{{placeDetails.desc}}</p>
+        <button *ngIf="placeDetails.link">
+            <a href="{{placeDetails.link}}">Book your stay</a>
+        </button>
       </div>
       <div>
       <app-star-rating 
       [placeName]="placeName"
       class=""></app-star-rating>
       </div>
-      
-
-
     </div>
-
 </div>
 <div class="detailed-view" *ngIf="sights">
-    <div *ngFor="let sight of sights">
-        {{sight.name}}
-    </div>
-    <div *ngFor="let ax of accommodation">
-        {{ax.name}}
-    </div>
+    <!-- [locations]="cities"
+      [(selectedLocation)]="selectedCity"
+      filter="city" -->
+    <app-location-cards
+    [locations]="cities"
+    filter="sight"
+    ></app-location-cards>
+    <app-location-cards
+    [locations]="cities"
+    filter="accommodation"
+    ></app-location-cards>
 </div>

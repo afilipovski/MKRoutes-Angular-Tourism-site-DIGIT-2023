@@ -39,6 +39,7 @@ export class StarRatingComponent {
           body: "You must be logged in to review places."
         }
       })
+      return;
     }
     this.editable = !this.editable;
     if (!this.editable) {
