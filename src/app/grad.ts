@@ -3,4 +3,5 @@ export interface IGrad {
     lat: number;
     lon: number; 
     img: string;
+    desc: string;
 }

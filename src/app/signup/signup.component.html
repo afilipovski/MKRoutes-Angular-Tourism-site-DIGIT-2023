@@ -1,0 +1,6 @@
+<app-navbar></app-navbar>
+<div>Email: <input type="text" [(ngModel)] = "email"></div>
+<div>Password: <input type="text" [(ngModel)] = "password"></div>
+<div>Confirm password: <input type="text" [(ngModel)] = "confirmPassword"></div>
+<div *ngIf="errmsg">ERROR: {{errmsg}}</div>
+<button (click) = "signup()">Sign up</button>

@@ -3,6 +3,13 @@
     <a class="text-offblack"><strong>↑</strong>our Macedonia</a>
   </div>
   <div class="flex row justify-end">
+    <button 
+      (mouseover)="signInVisible = true"
+      (mouseleave)="signInVisible = false"
+      class="flex flex-col justify-center" title="User">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
+      <app-signin *ngIf="signInVisible"></app-signin>
+    </button>
     <button class="mr-[8px]" title="Search locations">
       <img src="assets/search2.svg" />
     </button>

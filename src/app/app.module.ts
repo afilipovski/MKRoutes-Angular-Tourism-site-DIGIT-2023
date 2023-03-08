@@ -20,7 +20,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // MATERIAL UI
 
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { SignupComponent } from './signup/signup.component';
+
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +43,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     CitiesComponent,
     PlaceComponent,
     StarRatingComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +54,13 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     BrowserAnimationsModule,
     MatIconModule,
     InfiniteScrollModule,
+    MatInputModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideStorage(() => getStorage()),
   ],
-  providers: [],
+  providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

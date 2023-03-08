@@ -1,6 +1,5 @@
-<div *ngIf="weather">
+<div *ngIf="weather" class="flex flex-col items-center">
     <img src={{weather.img}} alt="weather.desc">
     <div>{{weather.desc}}</div>
-    <div>Temperature: {{weather.temp}}°C</div>
-    <div>Feels Like: {{weather.feelsLike}}°C</div>
+    <div>{{weather.temp}}°C | RF: {{weather.feelsLike}}°C</div>
 </div>

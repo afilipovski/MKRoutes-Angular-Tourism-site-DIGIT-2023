@@ -1,6 +1,12 @@
-<div *ngIf="details">
-    <h1 class="text-5xl">{{details.name}}</h1>
-
-    <app-weather [lat] = "details.lat" [lon] = "details.lon"></app-weather>
+<div *ngIf="placeDetails" style="background-image: url({{placeDetails.img}});" id="full-page-container">
+    <app-navbar></app-navbar>
+    <div class="text">
+        <div class="basic flex flex-row items-center justify-center flex-wrap">
+            <h1 class="text-5xl font-bold">{{placeDetails.name}}</h1>
+            <app-weather [lat]="placeDetails.lat" [lon]="placeDetails.lon"></app-weather>
+        </div>
+        <p>{{placeDetails.desc}}</p>
+    </div>
+    <mat-icon fontIcon="bookmark_outline"></mat-icon>
     <app-star-rating></app-star-rating>
 </div>

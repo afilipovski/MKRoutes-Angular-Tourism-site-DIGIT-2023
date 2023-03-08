@@ -1,0 +1,15 @@
+span {
+    display: inline-block;
+    height: 24px;
+    /* color: yellow; */
+}
+.base {
+    position: relative;
+}
+.lefthalf, .righthalf {
+    width: 12px;
+    position: absolute;
+}
+.righthalf {
+    left: 12px;
+}

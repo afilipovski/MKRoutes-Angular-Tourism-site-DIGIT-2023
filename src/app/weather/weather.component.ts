@@ -25,8 +25,8 @@ export class WeatherComponent {
         this.weather = {
           img: `https://afilipovski.github.io/meteo-vitals/images/weather/${r["weather"][0]["icon"]}@2x.png`,
           desc: r["weather"][0]["description"],
-          temp: r["main"]["temp"],
-          feelsLike: r["main"]["feels_like"]
+          temp: Math.round(r["main"]["temp"]),
+          feelsLike: Math.round(r["main"]["feels_like"])
         }
       }
     )
