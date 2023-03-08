@@ -40,6 +40,8 @@ export let gradovi: IGrad[] = [
     lat: 41.1231,
     lon: 20.8016,
     img: 'https://journication.de/wp-content/uploads/sites/110/2020/04/ohrid-north-macedonia-nordmazedonien-travel-tips-city-trip-sehenswuerdigkeiten-church-holy-kapelle-orthodox-kaneo-famous-panoramic-panorama-mountains.jpg',
+    bgImage:
+      'https://i0.wp.com/www.thebalkansandbeyond.com/wp-content/uploads/2021/07/Things-to-do-in-Ohrid-View.png?fit=2240%2C1260&ssl=1',
     desc: `Sublime Ohrid is North Macedonia's most seductive destination. It sits on the edge of serene Lake Ohrid, with an atmospheric old quarter that cascades down steep streets, dotted with beautiful churches and topped by the bones of a medieval castle. Traditional restaurants and lakeside cafes liven up the cobblestone streets, which in high summer can be very lively indeed.`,
   },
   {

@@ -5,6 +5,8 @@
   height: 100vh;
   width: 100vw;
   background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
   align-items: end;
 }
 #cityInfoContainer {
@@ -14,7 +16,7 @@
 }
 .text-shadowed-white {
   color: white;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
 }
 #readMoreButton {
   width: 200px;
