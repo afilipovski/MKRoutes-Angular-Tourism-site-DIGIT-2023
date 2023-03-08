@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-star-rating',
@@ -7,13 +7,18 @@ import { Component, Input } from '@angular/core';
 })
 export class StarRatingComponent {
   @Input() stars : number | number[] = 5;
+  @Output() review = new EventEmitter<{reviewStars : number, reviewText : string}>
   starsArr : number[] = [0,1,2,3,4];
 
   rating : number = 0;
+  text : string = "";
+  editable : boolean = false;
   tempRating : number = 0;
 
   hoverEvent(tempRating : number) : void {
-    this.tempRating = tempRating;    
+    if (this.editable) {
+      this.tempRating = tempRating;    
+    }
   }
   clickEvent() : void {
     this.rating = this.tempRating
@@ -30,4 +35,14 @@ export class StarRatingComponent {
     }
     return "star_outline"
   }
+  toggleEditable() {
+    this.editable = !this.editable;
+    if (!this.editable) {
+      this.review.emit({
+        reviewStars: this.rating,
+        reviewText: this.text
+      })
+    }
+  }
+
 }

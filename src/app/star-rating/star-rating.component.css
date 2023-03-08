@@ -13,3 +13,9 @@ span {
 .righthalf {
     left: 12px;
 }
+:host {
+    background: white;
+}
+button {
+    background: red;
+}

@@ -12,8 +12,10 @@
     }}"></mat-icon>
 </span>
 </div>
-<div *ngIf="rating">
-    <mat-form-field>
-        <textarea matInput placeholder="Enter your review..."></textarea>
-    </mat-form-field>
+<div>
+<p>{{text}}</p>
+<mat-form-field>
+    <textarea [(ngModel)] = "text" disabled="{{!editable}}" matInput placeholder="Enter your review..."></textarea>
+</mat-form-field>
 </div>
+<button (click)="toggleEditable()">{{editable ? "Save" : "Edit"}}</button>
