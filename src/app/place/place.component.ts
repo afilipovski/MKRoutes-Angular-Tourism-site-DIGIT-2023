@@ -20,6 +20,17 @@ export class PlaceComponent {
     private db : AngularFireDatabase
   ) {}
 
+  placeDetails?:IGrad;
+
+  sights ?: IGrad[];
+  accommodation ?: IGrad[];
+
+  userControls : any = {
+    bookmark: false,
+    reviewStars: 0,
+    reviewText: ""
+  }
+
   ngOnInit():void {
     const placeName = this.route.snapshot.paramMap.get("id");
     
@@ -27,6 +38,13 @@ export class PlaceComponent {
     
     if (!this.placeDetails) {
       this.location.back();
+    }
+
+    if (this.placeDetails.sights) {
+      this.sights = gradovi.filter(s => this.placeDetails?.sights?.includes(s.name));
+    }
+    if (this.placeDetails.accommodation) {
+      this.accommodation = gradovi.filter(h => this.placeDetails?.accommodation?.includes(h.name))
     }
 
     this.auth.user.subscribe(user => {
@@ -37,10 +55,4 @@ export class PlaceComponent {
     })
   }
 
-  placeDetails?:IGrad;
-  userControls : any = {
-    bookmark: false,
-    reviewStars: 0,
-    reviewText: ""
-  }
 }
