@@ -1,13 +1,25 @@
 <div
   id="citiesContainer"
   [ngStyle]="{ backgroundImage: 'url(' + selectedCity.img + ')' }"
-  class="flex row justify-between"
+  class="flex row"
 >
-  <div id="cityInfoContainer">
-    <h1>{{ selectedCity.name }}</h1>
+  <div id="cityInfoContainer" class="flex flex-col justify-end ml-3">
+    <h1 class="text-6xl font-bold" id="cityName">{{ selectedCity.name }}</h1>
+    <p class="text-white">
+      {{ selectedCity.lon }}° N, {{ selectedCity.lat }}° E
+    </p>
+    <br />
+    <p class="text-shadowed-white" id="desc">{{ selectedCity.desc }}</p>
+    <br />
+    <a
+      mat-raised-button
+      id="readMoreButton"
+      routerLink="/place/{{ selectedCity.name.toLowerCase() }}"
+      >Read more details</a
+    >
   </div>
   <div
-    class="flex items-end mb-5"
+    class="flex items-end"
     id="cityButtonsContainer"
     infiniteScroll
     [infiniteScrollDistance]="4"

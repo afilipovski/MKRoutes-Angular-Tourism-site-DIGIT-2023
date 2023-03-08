@@ -1,15 +1,16 @@
 .cityButton {
   align-items: center;
   background-color: white;
-  height: 21vw;
-  width: 16vw;
+  height: 350px;
+  width: 250px;
   border-radius: 8px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   color: white;
-  margin-block: 20px;
-  margin-inline: 5px;
+  margin: 10px;
+  margin-inline: 10px;
+  box-shadow: 5px 3px 10px rgb(0, 0, 0.9);
 }
 .cityName {
   margin-top: 5vw;
@@ -19,6 +20,7 @@
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  margin-bottom: 150px;
 }
 #cityButtonsContainer::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
@@ -27,4 +29,26 @@
   height: 100vh;
   width: 100vw;
   background-size: cover;
+  background-color: rgba(200, 100, 0, 0.3);
+  background-blend-mode: multiply;
+}
+#cityInfoContainer {
+  width: 40vw;
+  flex-shrink: 0;
+  margin-bottom: 200px;
+}
+#cityName {
+  color: white;
+}
+.text-shadowed-white {
+  color: white;
+}
+#readMoreButton {
+  width: 200px;
+}
+#desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
