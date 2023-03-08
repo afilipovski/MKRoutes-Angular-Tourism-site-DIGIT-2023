@@ -1,7 +1,7 @@
 <input
   [(ngModel)]="searchQuery"
   (ngModelChange)="change($event)"
-  class=" rounded frosted" placeholder="Search Cities..."
+  class=" rounded frosted shrink" placeholder="Search Cities..."
 />
 <div id="resultContainer" class="rounded-sm frosted">
   <ng-container *ngFor="let route of routes" class="test">

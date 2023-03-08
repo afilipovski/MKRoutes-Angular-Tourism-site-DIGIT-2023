@@ -11,7 +11,7 @@
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  perspective: 15px;
+  perspective: 18px;
 }
 
 header {
@@ -44,3 +44,13 @@ header {
   object-fit: cover;
   z-index: -1;
 }
+.background-text {
+  position: absolute;
+  top: 30%;
+  object-fit: cover;
+  z-index: -1;
+  transform: translateZ(-10px) scale(2.5);
+  font-size: 2vw;
+  font-weight: bold;
+}
+

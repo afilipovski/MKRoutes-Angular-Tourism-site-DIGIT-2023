@@ -8,11 +8,16 @@
   margin-top: 20px;
 }
 #resultContainer p {
-  border-bottom: solid black 2px;
+  color: white;
 }
 
 p:hover {
-  background-color: mediumpurple;
+  background-image: linear-gradient(90deg,
+  rgba(255, 255, 255, 0.1),
+  rgba(15, 43, 54, 0.4),
+  rgba(255, 255, 255, 0.1)
+  );
+  border-radius: 0.5rem;
 }
 #resultContainer p:last-child{
   border-bottom: none;
@@ -21,8 +26,11 @@ input{
   background-color: rgba(0,0,0,0);
   font-family: Manrope;
   text-align: center;
-  width: 50vw;
-  font-size: 5vw;
+  width: 75vw;
+  height: 10vh;
+  font-size: 4vh;
+  outline: none;
+  color: white;
 }
 input::placeholder{
   text-align: center;

@@ -8,6 +8,7 @@ img {
   width: 40px;
   display: inline-block;
   padding: 6px;
+  color: white;
 }
 
 a {
@@ -21,7 +22,7 @@ strong {
 
 .bgNav {
   background-image: linear-gradient(
-    rgba(255, 255, 255, 0.5),
+    rgb(137, 137, 137),
     rgba(255, 255, 255, 0)
   );
 }
@@ -30,6 +31,7 @@ mat-icon {
   font-size: 40px;
   height: 40px;
   width: 40px;
+  color: white;
 }
 
 app-signin {
@@ -37,4 +39,8 @@ app-signin {
   top: 45px;
   right: 90px;
   z-index: 10;
+}
+
+h1 {
+  font-size: 7vh;
 }
