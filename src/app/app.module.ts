@@ -20,8 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // MATERIAL UI
 
 import { MatIconModule } from '@angular/material/icon';
-
-import { CityInfoComponent } from './city-info/city-info.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { CityInfoComponent } from './city-info/city-info.component';
     CitiesComponent,
     PlaceComponent,
     StarRatingComponent,
-    CityInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +41,7 @@ import { CityInfoComponent } from './city-info/city-info.component';
     FormsModule,
     BrowserAnimationsModule,
     MatIconModule,
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

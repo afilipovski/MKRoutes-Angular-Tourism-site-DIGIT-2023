@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { gradovi } from '../../assets/routes';
+import { IGrad } from '../grad';
 
 @Component({
   selector: 'app-cities',
@@ -7,10 +8,14 @@ import { gradovi } from '../../assets/routes';
   styleUrls: ['./cities.component.css'],
 })
 export class CitiesComponent {
-  cities = gradovi;
-  selectedCity = this.cities[0];
+  cities: IGrad[] = gradovi;
+  selectedCity: IGrad = this.cities[0];
 
-  click(city: any) {
+  click(city: IGrad) {
     this.selectedCity = city;
+  }
+
+  onScroll() {
+    this.cities.push(...this.cities);
   }
 }

@@ -1,15 +1,30 @@
 .cityButton {
   align-items: center;
   background-color: white;
-  height: 25vw;
-  width: 19vw;
+  height: 21vw;
+  width: 16vw;
   border-radius: 8px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   color: white;
   margin-block: 20px;
+  margin-inline: 5px;
 }
 .cityName {
   margin-top: 5vw;
+}
+#cityButtonsContainer {
+  max-width: 100vw;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#cityButtonsContainer::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+#citiesContainer {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
 }

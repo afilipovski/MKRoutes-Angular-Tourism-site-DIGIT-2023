@@ -1,15 +1,30 @@
-<div class="flex justify-around">
-  <ng-container *ngFor="let city of cities">
-    <button
-      class="cityButton flex flex-col"
-      (click)="click(city)"
-      [ngStyle]="{ backgroundImage: 'url(' + city.img + ')' }"
-      appHighlight
-    >
-      <p class="text-3xl cityName">{{ city.name }}</p>
-    </button>
-  </ng-container>
-</div>
-<div>
-  <app-city-info [selectedCity]="selectedCity"></app-city-info>
+<div
+  id="citiesContainer"
+  [ngStyle]="{ backgroundImage: 'url(' + selectedCity.img + ')' }"
+  class="flex row justify-between"
+>
+  <div id="cityInfoContainer">
+    <h1>{{ selectedCity.name }}</h1>
+  </div>
+  <div
+    class="flex items-end mb-5"
+    id="cityButtonsContainer"
+    infiniteScroll
+    [infiniteScrollDistance]="4"
+    [infiniteScrollThrottle]="0"
+    [horizontal]="true"
+    [scrollWindow]="false"
+    (scrolled)="onScroll()"
+  >
+    <ng-container *ngFor="let city of cities">
+      <button
+        class="cityButton flex flex-col shrink-0"
+        (click)="click(city)"
+        [ngStyle]="{ backgroundImage: 'url(' + city.img + ')' }"
+        appHighlight
+      >
+        <p class="text-3xl cityName">{{ city.name }}</p>
+      </button>
+    </ng-container>
+  </div>
 </div>
