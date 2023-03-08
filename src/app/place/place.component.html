@@ -3,13 +3,20 @@
     <div class="text frosted flex flex-wrap row items-center">
       <div class="flex flex-col basis-1/2">
         <div class="basic flex flex-row items-center">
-            <mat-icon fontIcon="{{userControls.bookmarked ? 'bookmark' : 'bookmark_outline'}}" (click)="toggleBookmark()" fontIcon="bookmark_outline" class=""></mat-icon>
+            <mat-icon fontIcon="{{bookmarked ? 'bookmark' : 'bookmark_outline'}}" (click)="toggleBookmark()" fontIcon="bookmark_outline" class=""></mat-icon>
             <h1 class="text-5xl font-bold">{{placeDetails.name}}</h1>
             <app-weather *ngIf="placeDetails.lat && placeDetails.lon" [lat]="placeDetails.lat" [lon]="placeDetails.lon" class="justify-self-end"></app-weather>
         </div>
         <p>{{placeDetails.desc}}</p>
       </div>
-      <app-star-rating class="basis-1/2"></app-star-rating>
+      <div>
+      <app-star-rating 
+      [placeName]="placeName"
+      class="basis-1/2"></app-star-rating>
+      </div>
+      
+
+
     </div>
 
 </div>

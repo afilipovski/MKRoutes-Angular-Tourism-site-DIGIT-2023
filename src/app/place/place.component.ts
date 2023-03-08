@@ -5,62 +5,75 @@ import { gradovi } from 'src/assets/routes';
 import { IGrad } from '../grad';
 import { UserControlsService } from '../user-controls.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-place',
   templateUrl: './place.component.html',
-  styleUrls: ['./place.component.css']
+  styleUrls: ['./place.component.css'],
 })
 export class PlaceComponent {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private ucs : UserControlsService,
-    private afa : AngularFireAuth
+    private ucs: UserControlsService,
+    private afa: AngularFireAuth,
+    private dialog : MatDialog
   ) {}
 
-  placeName : string = "";
-  placeDetails?:IGrad;
+  placeName: string = '';
+  placeDetails?: IGrad;
 
-  sights ?: IGrad[];
-  accommodation ?: IGrad[];
+  sights?: IGrad[];
+  accommodation?: IGrad[];
 
-  userControls : any = {
-    bookmarked: false,
-    reviewStars: 0,
-    reviewText: ""
-  }
+  bookmarked: boolean = false;
 
-  uid ?: string | null | undefined;
+  uid?: string | null | undefined;
 
   toggleBookmark() {
-    this.userControls.bookmarked = !this.userControls.bookmarked;
-    this.ucs.setDetails(this.uid, this.placeName, this.userControls);
+    if (this.uid) {
+      this.bookmarked = !this.bookmarked;
+      this.ucs.setBookmarked(this.uid, this.placeName, this.bookmarked);
+    } else {
+      this.dialog.open(ErrorDialogComponent, {
+        width:'400px',
+        data: {
+          title: "Log in required",
+          body: "You must be logged in to bookmark places."
+        }
+      })
+    }
   }
-  ngOnInit():void {
-    this.placeName = this.route.snapshot.paramMap.get("id") || "";
-    
-    this.placeDetails = gradovi.filter(grad => grad.name.toLowerCase() === this.placeName)[0]
-    
+  ngOnInit(): void {
+    this.placeName = this.route.snapshot.paramMap.get('id') || '';
+
+    this.placeDetails = gradovi.filter(
+      (grad) => grad.name.toLowerCase() === this.placeName
+    )[0];
+
     if (!this.placeName || !this.placeDetails) {
       this.location.back();
       return;
     }
 
     if (this.placeDetails.sights) {
-      this.sights = gradovi.filter(s => this.placeDetails?.sights?.includes(s.name));
+      this.sights = gradovi.filter((s) =>
+        this.placeDetails?.sights?.includes(s.name)
+      );
     }
     if (this.placeDetails.accommodation) {
-      this.accommodation = gradovi.filter(h => this.placeDetails?.accommodation?.includes(h.name))
+      this.accommodation = gradovi.filter((h) =>
+        this.placeDetails?.accommodation?.includes(h.name)
+      );
     }
-    
-    this.afa.onAuthStateChanged(user => {
-      this.uid = user?.uid;
-      this.ucs.getPlaceDetails(this.uid, this.placeName).then(res => {
-        this.userControls = res;
-        console.log(res); 
-      })
-    })
-  }
 
+    this.afa.onAuthStateChanged((user) => {
+      this.uid = user?.uid;
+      this.ucs.getPlaceDetails(this.uid, this.placeName).then((res) => {
+        this.bookmarked = res.bookmarked;
+      });
+    });
+  }
 }

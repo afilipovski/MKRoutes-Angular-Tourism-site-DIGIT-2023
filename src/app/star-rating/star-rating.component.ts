@@ -1,4 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { UserControlsService } from '../user-controls.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-star-rating',
@@ -6,13 +10,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./star-rating.component.css']
 })
 export class StarRatingComponent {
-  @Input() stars : number | number[] = 5;
-  @Output() review = new EventEmitter<{reviewStars : number, reviewText : string}>
+  @Input() placeName !: string;
+
+  editable : boolean = false;
+
   starsArr : number[] = [0,1,2,3,4];
 
   rating : number = 0;
   text : string = "";
-  editable : boolean = false;
+
   tempRating : number = 0;
 
   hoverEvent(tempRating : number) : void {
@@ -23,26 +29,39 @@ export class StarRatingComponent {
   clickEvent() : void {
     this.rating = this.tempRating
   }
-  ngOnInit() {
-    let indices : number[] = [];
-    for (let i=0; i<this.stars; i++)
-      indices.push(i);
-    this.starsArr = indices;
-  }
-  getIconType(index : number, rating : number) : string {
-    if (index < rating) {
-      return "star"
-    }
-    return "star_outline"
-  }
+
   toggleEditable() {
+    if (!this.uid) {
+      this.dialog.open(ErrorDialogComponent, {
+        width:'400px',
+        data: {
+          title: "Log in required",
+          body: "You must be logged in to review places."
+        }
+      })
+    }
     this.editable = !this.editable;
     if (!this.editable) {
-      this.review.emit({
-        reviewStars: this.rating,
-        reviewText: this.text
-      })
+      this.ucs.setStars(this.uid, this.placeName, this.rating);
+      this.ucs.setText(this.uid, this.placeName, this.text);
     }
   }
 
+  constructor(
+    private afa : AngularFireAuth,
+    private ucs : UserControlsService,
+    private dialog : MatDialog
+  ) {}
+  uid ?: string;
+  ngOnInit() {
+    this.afa.onAuthStateChanged(user => {
+      this.uid = user?.uid;
+      this.ucs.getPlaceDetails(this.uid, this.placeName).then(review => {
+        
+        this.rating = this.tempRating = review.reviewStars;
+        this.text = review.reviewText;
+        
+      })
+    })
+  }
 }

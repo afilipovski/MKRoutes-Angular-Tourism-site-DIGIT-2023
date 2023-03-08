@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -33,6 +34,7 @@ import { SignupComponent } from './signup/signup.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { SigninComponent } from './signin/signin.component';
 import { LocationCardsComponent } from './location-cards/location-cards.component';
+import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { LocationCardsComponent } from './location-cards/location-cards.componen
     SignupComponent,
     SigninComponent,
     LocationCardsComponent,
+    ErrorDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { LocationCardsComponent } from './location-cards/location-cards.componen
     InfiniteScrollModule,
     MatInputModule,
     MatButtonModule,
+    MatDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

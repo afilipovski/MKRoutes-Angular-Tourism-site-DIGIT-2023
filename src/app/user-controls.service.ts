@@ -27,13 +27,17 @@ export class UserControlsService {
     }
     return defaultObject;
   }
-  
-  setDetails(uid : string | null | undefined, placeName : string, value : {
-    bookmarked : boolean;
-    reviewStars : number;
-    reviewText : string;
-  }) {
-    let ref = this.afd.database.ref(`${uid}/${placeName}`);
+
+  setBookmarked(uid: string | null | undefined, placeName: string, value:boolean) {
+    let ref = this.afd.database.ref(`${uid}/${placeName}/bookmarked`);
+    ref.set(value);
+  }
+  setStars(uid: string | null | undefined, placeName: string, value:number) {
+    let ref = this.afd.database.ref(`${uid}/${placeName}/reviewStars`);
+    ref.set(value);
+  }
+  setText(uid: string | null | undefined, placeName: string, value:string) {
+    let ref = this.afd.database.ref(`${uid}/${placeName}/reviewText`);
     ref.set(value);
   }
 }
