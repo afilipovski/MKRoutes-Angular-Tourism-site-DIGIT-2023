@@ -8,14 +8,12 @@ import { IGrad } from '../grad';
   styleUrls: ['./cities.component.css'],
 })
 export class CitiesComponent {
-  cities: IGrad[] = gradovi;
+  cities: IGrad[] = gradovi.slice();
   selectedCity: IGrad = this.cities[0];
 
   click(city: IGrad) {
     this.selectedCity = city;
   }
 
-  onScroll() {
-    this.cities.push(...this.cities);
-  }
+  ngOnInit() {}
 }

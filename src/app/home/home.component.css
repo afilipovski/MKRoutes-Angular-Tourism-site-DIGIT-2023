@@ -12,6 +12,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 18px;
+  background-image: url("../../assets/para3.jpg");
 
 }
 .wrapper::-webkit-scrollbar {
@@ -50,11 +51,11 @@ header {
 }
 .background-text {
   position: absolute;
-  top: 30%;
+  top: 25%;
   object-fit: cover;
   z-index: -1;
   transform: translateZ(-10px) scale(2.5);
-  font-size: 2vw;
+  font-size: 3vw;
   font-weight: bold;
 }
 

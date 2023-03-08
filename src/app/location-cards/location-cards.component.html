@@ -1,0 +1,23 @@
+<div
+  class="flex"
+  id="cityButtonsContainer"
+  infiniteScroll
+  [infiniteScrollDistance]="4"
+  [infiniteScrollThrottle]="0"
+  [horizontal]="true"
+  [scrollWindow]="false"
+  (scrolled)="onScroll()"
+>
+  <ng-container *ngFor="let location of locations">
+    <ng-container *ngIf="filter != 'none' && location.type === filter">
+      <button
+        class="cityButton flex flex-col shrink-0"
+        (click)="click(location)"
+        [ngStyle]="{ backgroundImage: 'url(' + location.img + ')' }"
+        appHighlight
+      >
+        <p class="text-3xl cityName">{{ location.name }}</p>
+      </button>
+    </ng-container>
+  </ng-container>
+</div>

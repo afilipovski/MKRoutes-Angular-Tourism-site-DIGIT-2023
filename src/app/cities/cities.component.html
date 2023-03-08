@@ -1,11 +1,16 @@
+<!--'radial-gradient(rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.6)),-->
 <div
   id="citiesContainer"
-  [ngStyle]="{ backgroundImage: 'url(' + selectedCity.img + ')' }"
+  [ngStyle]="{
+    backgroundImage: ' url(' + selectedCity.bgImage + ')'
+  }"
   class="flex row"
 >
   <div id="cityInfoContainer" class="flex flex-col justify-end ml-3">
-    <h1 class="text-6xl font-bold" id="cityName">{{ selectedCity.name }}</h1>
-    <p class="text-white">
+    <h1 class="text-shadowed-white text-6xl font-bold mb-3">
+      {{ selectedCity.name }}
+    </h1>
+    <p class="text-shadowed-white">
       {{ selectedCity.lon }}° N, {{ selectedCity.lat }}° E
     </p>
     <br />
@@ -18,25 +23,11 @@
       >Read more details</a
     >
   </div>
-  <div
-    class="flex items-end"
-    id="cityButtonsContainer"
-    infiniteScroll
-    [infiniteScrollDistance]="4"
-    [infiniteScrollThrottle]="0"
-    [horizontal]="true"
-    [scrollWindow]="false"
-    (scrolled)="onScroll()"
-  >
-    <ng-container *ngFor="let city of cities">
-      <button
-        class="cityButton flex flex-col shrink-0"
-        (click)="click(city)"
-        [ngStyle]="{ backgroundImage: 'url(' + city.img + ')' }"
-        appHighlight
-      >
-        <p class="text-3xl cityName">{{ city.name }}</p>
-      </button>
-    </ng-container>
+  <div class="mb-[150px] overflow-hidden">
+    <app-location-cards
+      [locations]="cities"
+      [(selectedLocation)]="selectedCity"
+      filter="city"
+    ></app-location-cards>
   </div>
 </div>
