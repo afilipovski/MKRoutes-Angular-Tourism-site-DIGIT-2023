@@ -6,7 +6,7 @@ export let gradovi: IGrad[] = [
     type: 'city',
     lat: 41.9981,
     lon: 21.4254,
-    img: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/%D0%A1%D0%9A_Old_Bridge%2C_Skopje_%2833745349220%29.jpg',
+    img: 'https://pix10.agoda.net/geo/city/10189/1_10189_02.jpg?ca=6&ce=1&s=1920x822',
     bgImage:
       'https://i0.wp.com/www.discoveringmacedonia.com/wp-content/uploads/2014/06/visit-skopje-3.jpg?resize=2000%2C964&ssl=1',
     desc: 'With all of its perfections and flaws, Skopje is a city like no other. We grew up here, we live here, we work here.. All of our memories with the people we care the most about are created on the streets of Skopje. We are proud of the city with inexhaustible energy. The city that almost never sleeps. The wonderful squares, the biggest monument on the Balkan Peninsula, the City Park, Vodno and Matka, the Vrelo caves, the way Vardar cuts it in half, the Millenium cross, the Old town bazaar, the Kale fortress .. all of these represent a certain period and tell a different story of the capital city of the land of the sun.',
@@ -49,7 +49,9 @@ export let gradovi: IGrad[] = [
     type: 'city',
     lat: 41.6549,
     lon: 20.7339,
-    img: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/2c/76/37/hotel-bistra-mavrovo.jpg?w=700&h=-1&s=1',
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/211372208.jpg?k=0eba18fae0e649d25715c67feb33515d7951461337fe068cce392f4326ba53cd&o=&hp=1',
+    bgImage:
+      'https://www.wallpaperflare.com/static/973/319/739/entre-neige-et-brouillard-wallpaper.jpg',
     desc: `Discovering the beauties of nature and exploring impeccable scenery, Macedonian customs, and traditional cuisine, you find yourself in Mavrovo .Set in the breathtaking scenery, amid grassy plateaus and snowy peaks of the mountainous region of western Macedonia, it is the frosting of the cake called the Macedonian outdoor experience.`,
   },
   {
@@ -58,6 +60,8 @@ export let gradovi: IGrad[] = [
     lat: 41.1811,
     lon: 22.7227,
     img: 'https://pix10.agoda.net/geo/city/665594/1_665594_04.jpg?ca=7&ce=1&s=1920x822',
+    bgImage:
+      'https://upload.wikimedia.org/wikipedia/commons/b/b5/Dojran_Lake_50.jpg',
     desc: '',
   },
   {
@@ -66,6 +70,8 @@ export let gradovi: IGrad[] = [
     lat: 40.8833,
     lon: 21.0222,
     img: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Lake_Prespa_from_Slivnica_Monastery_01.JPG',
+    bgImage:
+      'https://upload.wikimedia.org/wikipedia/commons/9/97/54_1_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%9F%D1%80%D0%B5%D1%81%D0%BF%D0%B0.jpg',
     desc: '',
   },
   {

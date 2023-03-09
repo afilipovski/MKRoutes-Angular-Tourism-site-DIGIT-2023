@@ -11,9 +11,8 @@
     rgba(255, 255, 255, 0.34),
     rgba(255, 255, 255, 0.3)
   );
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
+  backdrop-filter: blur(10px);
 }
 
 body {
