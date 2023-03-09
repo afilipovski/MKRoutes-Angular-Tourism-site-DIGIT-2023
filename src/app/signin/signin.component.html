@@ -1,15 +1,24 @@
-<div *ngIf="!loading">
-    <div *ngIf="user">
-        Logged in as {{user.email}}
+<div *ngIf="!loading" class="frosted">
+    <div *ngIf="user" class="flex flex-col text-bold text-white">
+      <h1 class="p-2 text-1xl">Logged in as <strong>{{user.email}}</strong></h1>
         <a routerLink="/bookmarks">Bookmarks</a>
-        <button (click)="logout()">Log out</button>
+        <button (click)="logout()" class="w-full border-t-2 border-white redBtn">
+          <h1 class="p-2">Log out</h1>
+        </button>
     </div>
-    <div *ngIf="!user">
-        <div>Log in:</div>
-        <div>Email: <input type="text" [(ngModel)] = "email"></div>
-        <div>Password: <input type="text" [(ngModel)] = "password"></div>
-        <div *ngIf="errMsg">{{errMsg}}</div>
-        <button (click)="login()">Log in</button>
-        <button routerLink="/signup/">Sign up</button>
+    <div *ngIf="!user" class="flex flex-col">
+      <div class="bg-white loginText mb-2 p-2">Log in</div>
+        <div class="flex row justify-between my-2 px-3">
+          <h1 class="mr-2 text-white">Email </h1>
+          <input class="rounded" type="text" [(ngModel)] = "email">
+        </div>
+        <div class="flex row justify-between mb-2 px-3">
+          <h1 class="mr-2 text-white">Password </h1>
+          <input class="rounded" type="text" [(ngModel)] = "password">
+        </div>
+        <div class="text-2xl text-white" *ngIf="errMsg">{{errMsg}}</div>
+        <button (click)="login()" class="p-3 mt-2 logoutButton2 signinBtn text-white">Log in</button>
+        <button routerLink="/signup/" class="p-3 logoutButton signinBtn mt-2 text-white">Sign up</button>
+
     </div>
 </div>

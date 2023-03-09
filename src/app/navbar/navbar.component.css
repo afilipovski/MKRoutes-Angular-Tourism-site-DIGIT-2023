@@ -37,7 +37,7 @@ mat-icon {
 app-signin {
   position: absolute;
   top: 45px;
-  right: 90px;
+  right: 110px;
   z-index: 10;
 }
 
