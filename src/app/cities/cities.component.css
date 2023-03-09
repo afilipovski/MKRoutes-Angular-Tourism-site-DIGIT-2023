@@ -7,12 +7,9 @@
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: multiply;
-  align-items: end;
 }
 #cityInfoContainer {
-  width: 40vw;
   flex-shrink: 0;
-  margin-bottom: 200px;
 }
 .text-shadowed-white {
   color: white;

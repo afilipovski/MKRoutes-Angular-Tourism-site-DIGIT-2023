@@ -4,9 +4,12 @@
   [ngStyle]="{
     backgroundImage: ' url(' + selectedCity.bgImage + ')'
   }"
-  class="flex row"
+  class="flex flex-col items-center sm:flex-row sm:items-end"
 >
-  <div id="cityInfoContainer" class="flex flex-col justify-end ml-3">
+  <div
+    id="cityInfoContainer"
+    class="max-w-[90vw] sm:max-w-[40vw] mt-[70px] sm:mt-[0px] sm:mb-[200px] flex flex-col justify-end ml-3"
+  >
     <h1 class="text-shadowed-white text-6xl font-bold mb-3">
       {{ selectedCity.name }}
     </h1>
@@ -23,7 +26,7 @@
       >Read more details</a
     >
   </div>
-  <div class="mb-[150px] overflow-hidden">
+  <div class="sm:mb-[150px] overflow-hidden w-[100vw]">
     <app-location-cards
       [locations]="cities"
       [(selectedLocation)]="selectedCity"
