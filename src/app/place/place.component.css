@@ -18,3 +18,17 @@ main {
     color: rgb(223, 217, 217);
     -webkit-text-stroke: 0.5px black;
 }
+
+.dataContainer {
+    width: 90vw;
+}
+.left {
+    flex-basis: 40vw;
+    flex-shrink: 1;
+}
+#bookmark {
+    height: 100%;
+}
+#citiesDiv{
+  background-color: #171717;
+}

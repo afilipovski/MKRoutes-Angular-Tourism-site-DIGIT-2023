@@ -1,33 +1,35 @@
-<div *ngIf="placeDetails" style="background-image: url({{placeDetails.img}});" id="full-page-container" class="flex">
-    <app-navbar></app-navbar>
-    <div class="text bg-white rounded flex flex-wrap row items-center w-fit">
-      <div class="flex flex-col">
-        <div class="basic flex flex-row items-center">
-            <mat-icon fontIcon="{{bookmarked ? 'bookmark' : 'bookmark_outline'}}" (click)="toggleBookmark()" fontIcon="bookmark_outline" class=""></mat-icon>
+<app-navbar></app-navbar>
+<div *ngIf="placeDetails" style="background-image: linear-gradient(rgba(23,23,23,0.3), rgba(255,255,255,0.3)) ,url({{placeDetails.img}});" id="full-page-container" class="flex">
+  <div class="rounded flex flex-wrap dataContainer frosted w-fit p-4 justify-between">
+      <div class="flex flex-col left basis-3/4">
+        <div class="basic flex flex-row justify-between">
+            <mat-icon id="bookmark" fontIcon="{{bookmarked ? 'bookmark' : 'bookmark_outline'}}" (click)="toggleBookmark()" fontIcon="bookmark_outline" class=""></mat-icon>
             <h1 class="text-5xl font-bold">{{placeDetails.name}}</h1>
-            <app-weather *ngIf="placeDetails.lat && placeDetails.lon" [lat]="placeDetails.lat" [lon]="placeDetails.lon" class="justify-self-end"></app-weather>
+            <app-weather *ngIf="placeDetails.lat && placeDetails.lon" [lat]="placeDetails.lat" [lon]="placeDetails.lon"></app-weather>
         </div>
-        <p>{{placeDetails.desc}}</p>
-        <button *ngIf="placeDetails.link">
-            <a href="{{placeDetails.link}}">Book your stay</a>
-        </button>
+          <p>{{placeDetails.desc}}</p>
+          <button *ngIf="placeDetails.link">
+              <a href="{{placeDetails.link}}">Book your stay</a>
+          </button>
       </div>
       <div>
-      <app-star-rating 
+      <app-star-rating
       [placeName]="placeName"
       class=""></app-star-rating>
       </div>
     </div>
 </div>
-<div class="detailed-view" id="citiesDiv" *ngIf="sights">
+<div class="detailed-view" id="citiesDiv" class="border-t-4 border-white" *ngIf="sights.length">
     <!-- [locations]="cities"
       [(selectedLocation)]="selectedCity"
       filter="city" -->
-    <app-location-cards
+    <h1 class="text-white w-fit pt-16 mx-auto text-5xl text-center mb-8">Sights</h1>
+    <app-location-cards class="flex flex-wrap pt-8 mx-auto justify-center"
     [locations]="sights"
     [navigateOnClick]="true"
     ></app-location-cards>
-    <app-location-cards
+    <h1 class="text-white w-fit pt-16 mx-auto text-5xl text-center mb-8">Accommodation</h1>
+    <app-location-cards class="flex flex-wrap pt-8 pb-8 mx-auto justify-center"
     [locations]="accommodation"
     [navigateOnClick]="true"
     filter="accommodation"
