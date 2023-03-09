@@ -4,6 +4,7 @@
     <img routerLink="/" id="logo" src="../../assets/logo.svg" />
   </div>
   <div class="flex row justify-end">
+    <app-search *ngIf="searchEnabled"></app-search>
     <button
       (click)="toggle($event)"
       class="flex flex-col justify-center mr-[8px]"
@@ -17,7 +18,7 @@
     <button
       class="mr-[8px]"
       title="Search locations"
-      (click)="scroll('topDiv')"
+      (click)="search()"
     >
       <img src="assets/search2.svg" />
     </button>

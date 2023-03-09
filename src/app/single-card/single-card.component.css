@@ -27,3 +27,13 @@
 #cityButtonsContainer::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+mat-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
