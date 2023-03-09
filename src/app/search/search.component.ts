@@ -11,6 +11,8 @@ export class SearchComponent {
   searchQuery: string = '';
 
   change(event: string) {
-    this.searchQuery = event;
+    this.routes = gradovi.filter((grad) =>
+      grad.name.toLowerCase().includes(this.searchQuery)
+    );
   }
 }
