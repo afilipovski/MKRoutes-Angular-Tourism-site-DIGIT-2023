@@ -44,3 +44,8 @@ app-signin {
 h1 {
   font-size: 7vh;
 }
+
+#logo {
+  transform: scale(4);
+  margin-left: 30px;
+}

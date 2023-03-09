@@ -1,7 +1,9 @@
 <input
   [(ngModel)]="searchQuery"
   (ngModelChange)="change($event)"
-  class=" rounded frosted shrink" placeholder="Search Cities..."
+  class="rounded frosted shrink"
+  placeholder="Search Routes..."
+  id="searchBar"
 />
 <div id="resultContainer" class="rounded-sm frosted">
   <ng-container *ngFor="let route of routes" class="test">
@@ -11,7 +13,7 @@
         route.name.toUpperCase().includes(searchQuery.toUpperCase())
       "
     >
-      <p routerLink="/place/{{route.name.toLowerCase()}}" >{{ route.name }}</p>
+      <p routerLink="/place/{{ route.name.toLowerCase() }}">{{ route.name }}</p>
     </ng-container>
   </ng-container>
 </div>
