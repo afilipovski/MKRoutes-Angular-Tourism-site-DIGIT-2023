@@ -24,11 +24,12 @@
       [(selectedLocation)]="selectedCity"
       filter="city" -->
     <app-location-cards
-    [locations]="cities"
-    filter="sight"
+    [locations]="sights"
+    [navigateOnClick]="true"
     ></app-location-cards>
     <app-location-cards
-    [locations]="cities"
+    [locations]="accommodation"
+    [navigateOnClick]="true"
     filter="accommodation"
     ></app-location-cards>
 </div>

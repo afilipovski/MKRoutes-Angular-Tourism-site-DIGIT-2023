@@ -1,4 +1,10 @@
 <div class="container" (click)="clickEvent()" (mouseleave)="hoverEvent(rating)">
+    <div *ngIf="avgRating">
+        <div>{{avgRating.avg}}/5</div>
+        <mat-icon fontIcon="star"></mat-icon>
+        <div>{{avgRating.numReviews}} reviews</div>
+    </div>
+
 <span class="base" *ngFor="let index of starsArr">
     <span (mouseover)="hoverEvent(index + 1/2)" class="lefthalf"></span>
     <span (mouseover)="hoverEvent(index + 1)"class="righthalf"></span>

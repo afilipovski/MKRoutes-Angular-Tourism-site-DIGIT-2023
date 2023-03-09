@@ -46,6 +46,7 @@ export class StarRatingComponent {
       this.ucs.setStars(this.uid, this.placeName, this.rating);
       this.ucs.setText(this.uid, this.placeName, this.text);
     }
+    this.getAvgRating();
   }
 
   constructor(
@@ -63,6 +64,15 @@ export class StarRatingComponent {
         this.text = review.reviewText;
         
       })
+    })
+    this.getAvgRating();
+  }
+
+  avgRating ?: {avg : number, numReviews : number};
+
+  getAvgRating() {
+    this.ucs.getStars(this.placeName).then(ar => {
+      this.avgRating = ar;
     })
   }
 }

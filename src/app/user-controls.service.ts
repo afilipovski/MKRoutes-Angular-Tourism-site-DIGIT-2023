@@ -35,8 +35,10 @@ export class UserControlsService {
     if (!uid) {
       return defaultList;
     }
-    let data = await logsRef.get();
-    return Object.values(data.exportVal());
+    let data = (await logsRef.get()).exportVal();
+    if (!data)
+      return [];
+    return Object.values(data);
   }
 
   setBookmarked(uid: string | null | undefined, placeName: string, value:boolean) {
@@ -68,7 +70,10 @@ export class UserControlsService {
     }
     console.log(data);
     
-    return data.reduce((a,b) => a + b, 0) / data.length;
+    return {
+      avg: data.reduce((a,b) => a + b, 0) / data.length,
+      numReviews: data.length
+    }
   }
   setStars(uid: string | null | undefined, placeName: string, value:number) {
     let ref = this.afd.database.ref(`${uid}/${placeName}/reviewStars`);

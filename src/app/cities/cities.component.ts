@@ -8,7 +8,7 @@ import { IGrad } from '../grad';
   styleUrls: ['./cities.component.css'],
 })
 export class CitiesComponent {
-  cities: IGrad[] = gradovi.slice();
+  cities: IGrad[] = gradovi.slice().filter(grad => grad.type === 'city');
   selectedCity: IGrad = this.cities[0];
 
   click(city: IGrad) {

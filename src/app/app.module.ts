@@ -36,6 +36,7 @@ import { SigninComponent } from './signin/signin.component';
 import { LocationCardsComponent } from './location-cards/location-cards.component';
 import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
+import { SingleCardComponent } from './single-card/single-card.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { BookmarksComponent } from './bookmarks/bookmarks.component';
     LocationCardsComponent,
     ErrorDialogComponent,
     BookmarksComponent,
+    SingleCardComponent,
   ],
   imports: [
     BrowserModule,

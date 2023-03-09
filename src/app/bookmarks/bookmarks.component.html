@@ -1,1 +1,14 @@
-<p>bookmarks works!</p>
+<div class="fpbp">
+  <app-navbar></app-navbar>
+  <div class="flex flex-wrap">
+    <div *ngIf="!bookmarkedPlaces.length">
+        <h1>No bookmarks yet</h1>
+    </div>
+    <app-single-card
+      *ngFor="let place of bookmarkedPlaces"
+      [place]="place"
+      [navigateOnClick]="true"
+    ></app-single-card>
+  </div>
+  <!-- <app-location-cards class="mt" [locations]="bookmarkedPlaces" filter="njefnei"></app-location-cards> -->
+</div>

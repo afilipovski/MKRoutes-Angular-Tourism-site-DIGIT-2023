@@ -29,14 +29,12 @@ export class PlaceComponent {
   placeName: string = '';
   placeDetails?: IGrad;
 
-  sights?: IGrad[];
-  accommodation?: IGrad[];
+  sights : IGrad[] = [];
+  accommodation : IGrad[] = [];
 
   bookmarked: boolean = false;
 
   uid?: string | null | undefined;
-
-  avgRating ?: number;
 
   toggleBookmark() {
     if (this.uid) {
@@ -72,26 +70,22 @@ export class PlaceComponent {
         return;
       }
 
-      this.ucs.getStars(this.placeName).then(res => {
-        console.log(res);
-        
-        this.avgRating = res;
-      })
-
       if (this.placeDetails.sights) {
         this.sights = gradovi.filter((s) =>
+          s.type === 'sight' &&
           this.placeDetails?.sights?.includes(s.name)
         );
       }
       else {
-        delete this.sights;
+        this.sights = [];
       }
       if (this.placeDetails.accommodation) {
-        this.accommodation = gradovi.filter((h) =>
-          this.placeDetails?.accommodation?.includes(h.name)
+        this.accommodation = gradovi.filter((a) =>
+          a.type === 'accommodation' &&
+          this.placeDetails?.accommodation?.includes(a.name)
         );
       } else {
-        delete this.accommodation;
+        this.accommodation = []
       }
     });
   }

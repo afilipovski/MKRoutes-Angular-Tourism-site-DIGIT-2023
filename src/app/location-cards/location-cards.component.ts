@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IGrad } from '../grad';
 import { gradovi } from '../../assets/routes';
 import { Router } from '@angular/router';
+import { UserControlsService } from '../user-controls.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-location-cards',
@@ -14,12 +16,15 @@ export class LocationCardsComponent {
   @Output() selectedLocationChange = new EventEmitter<IGrad>();
   @Input() filter: string = 'none';
 
-  constructor(private router : Router) {}
+  @Input() navigateOnClick !: boolean;
+
+  constructor(
+    private router : Router,
+    private ucs : UserControlsService,
+    private afa : AngularFireAuth
+  ) {}
 
   click(city: IGrad) {
-    if (this.filter !== 'city') {
-      this.router.navigate([`/place/${city.name.toLowerCase()}`])
-    }
     this.selectedLocation = city;
     this.selectedLocationChange.emit(this.selectedLocation);
   }

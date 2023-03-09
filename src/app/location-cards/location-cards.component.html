@@ -9,15 +9,6 @@
   (scrolled)="onScroll()"
 >
   <ng-container *ngFor="let location of locations">
-    <ng-container *ngIf="filter != 'none' && location.type === filter">
-      <button
-        class="cityButton flex flex-col shrink-0 relative text-right"
-        (click)="click(location)"
-        [ngStyle]="{ backgroundImage: 'linear-gradient(155deg, rgba(255, 255, 255, 0.0) 58%, rgba(23, 23, 23, 0.5) 70%), url(' + location.img + ')' }"
-        appHighlight
-      >
-        <p class="text-4xl absolute top-[80%] w-full right-[10%]">{{ location.name }}</p>
-      </button>
-    </ng-container>
+    <app-single-card (click) = "click(location)" [place] = "location" [navigateOnClick]="navigateOnClick"></app-single-card>
   </ng-container>
 </div>
