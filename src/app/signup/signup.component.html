@@ -1,6 +1,19 @@
 <app-navbar></app-navbar>
-<div>Email: <input type="text" [(ngModel)] = "email"></div>
-<div>Password: <input type="text" [(ngModel)] = "password"></div>
-<div>Confirm password: <input type="text" [(ngModel)] = "confirmPassword"></div>
-<div *ngIf="errmsg">ERROR: {{errmsg}}</div>
-<button (click) = "signup()">Sign up</button>
+<div class="full-page-container signupBG">
+  <div class="flex flex-col frosted mx-auto w-fit">
+    <div class="flex row justify-between my-2 px-3 mt-8">
+      <h1 class="mr-2 text-white">Email</h1>
+      <input class="rounded" type="text" [(ngModel)] = "email">
+    </div>
+    <div class="flex row justify-between my-2 px-3">
+      <h1 class="mr-2 text-white">Password</h1>
+      <input class="rounded" type="text" [(ngModel)] = "password">
+    </div>
+    <div class="flex row justify-between my-2 px-3 mb-8">
+      <h1 class="mr-2 text-white">Confirm password</h1>
+      <input class="rounded" type="text" [(ngModel)] = "confirmPassword">
+    </div>
+    <div *ngIf="errmsg" class="text-white mx-auto">ERROR: {{errmsg}}</div>
+    <button (click) = "signup()" class="p-3 logoutButton signupBtn text-offblack bg-white">Sign up</button>
+  </div>
+</div>

@@ -1,3 +1,32 @@
-input {
-    border: 2px solid black;
+.signupBG {
+  background-image: url("../../assets/Peak3 copy.png"), linear-gradient(rgb(66, 44, 120), rgb(253, 231, 214));
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.full-page-container {
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  background-color: rgba(255,255,255,0.4);
+  font-family: Manrope;
+  text-align: center;
+  outline: none;
+  color: white;
+}
+input::placeholder{
+  text-align: center;
+  color: rgba(23, 23, 23, 0.2);
+
+}
+
+.signupBtn {
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-align: center;
 }
