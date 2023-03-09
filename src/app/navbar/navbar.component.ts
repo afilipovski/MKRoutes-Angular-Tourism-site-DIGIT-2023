@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, ViewChildren } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChildren, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +9,7 @@ import { Component, EventEmitter, Output, ViewChildren } from '@angular/core';
   },
 })
 export class NavbarComponent {
-  @ViewChildren('signIn') signInComponent : any;
+  @Input() displayScroll : boolean = true;
 
   signInVisible: boolean = false;
 
