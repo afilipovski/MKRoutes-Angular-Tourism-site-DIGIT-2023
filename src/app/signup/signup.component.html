@@ -3,17 +3,22 @@
   <div class="flex flex-col frosted mx-auto w-fit">
     <div class="flex row justify-between my-2 px-3 mt-8">
       <h1 class="mr-2 text-white">Email</h1>
-      <input class="rounded" type="text" [(ngModel)] = "email">
+      <input class="rounded" type="text" [(ngModel)]="email" />
     </div>
     <div class="flex row justify-between my-2 px-3">
       <h1 class="mr-2 text-white">Password</h1>
-      <input class="rounded" type="text" [(ngModel)] = "password">
+      <input class="rounded" type="password" [(ngModel)]="password" />
     </div>
     <div class="flex row justify-between my-2 px-3 mb-8">
       <h1 class="mr-2 text-white">Confirm password</h1>
-      <input class="rounded" type="text" [(ngModel)] = "confirmPassword">
+      <input class="rounded" type="password" [(ngModel)]="confirmPassword" />
     </div>
-    <div *ngIf="errmsg" class="text-white mx-auto">ERROR: {{errmsg}}</div>
-    <button (click) = "signup()" class="p-3 logoutButton signupBtn text-offblack bg-white">Sign up</button>
+    <div *ngIf="errmsg" class="text-white mx-auto">ERROR: {{ errmsg }}</div>
+    <button
+      (click)="signup()"
+      class="p-3 logoutButton signupBtn text-offblack bg-white"
+    >
+      Sign up
+    </button>
   </div>
 </div>

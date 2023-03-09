@@ -1,14 +1,16 @@
-<div class="fpbp">
+<div id="bookmarkContainer">
   <app-navbar [displayScroll]="false"></app-navbar>
-  <div class="flex flex-wrap">
-    <div *ngIf="!bookmarkedPlaces.length">
+  <div>
+    <div class="flex flex-wrap min-h-[100vh] min-w[100vw] pt-[4vh]">
+      <div *ngIf="!bookmarkedPlaces.length">
         <h1>No bookmarks yet</h1>
+      </div>
+      <app-single-card
+        *ngFor="let place of bookmarkedPlaces"
+        [place]="place"
+        [navigateOnClick]="true"
+      ></app-single-card>
     </div>
-    <app-single-card
-      *ngFor="let place of bookmarkedPlaces"
-      [place]="place"
-      [navigateOnClick]="true"
-    ></app-single-card>
+    <!-- <app-location-cards class="mt" [locations]="bookmarkedPlaces" filter="njefnei"></app-location-cards> -->
   </div>
-  <!-- <app-location-cards class="mt" [locations]="bookmarkedPlaces" filter="njefnei"></app-location-cards> -->
 </div>
