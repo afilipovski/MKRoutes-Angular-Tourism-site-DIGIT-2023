@@ -1,7 +1,7 @@
 <div *ngIf="!loading" class="frosted">
     <div *ngIf="user" class="flex flex-col text-bold text-white">
-      <h1 class="p-2 text-1xl">Logged in as <strong>{{user.email}}</strong></h1>
-        <a routerLink="/bookmarks">Bookmarks</a>
+      <h1 class="p-2 text-1xl loginText bg-white text-offblack">Logged in as <strong>{{user.email}}</strong></h1>
+        <a class="w-full border-t-2 border-white logoutButton2 py-2" routerLink="/bookmarks">Bookmarks</a>
         <button (click)="logout()" class="w-full border-t-2 border-white redBtn">
           <h1 class="p-2">Log out</h1>
         </button>
@@ -18,7 +18,7 @@
         </div>
         <div class="text-2xl text-white" *ngIf="errMsg">{{errMsg}}</div>
         <button (click)="login()" class="p-3 mt-2 logoutButton2 signinBtn text-white">Log in</button>
-        <button routerLink="/signup/" class="p-3 logoutButton signinBtn mt-2 text-white">Sign up</button>
+        <button routerLink="/signup/" class="p-3 logoutButton signinBtn text-white">Sign up</button>
 
     </div>
 </div>

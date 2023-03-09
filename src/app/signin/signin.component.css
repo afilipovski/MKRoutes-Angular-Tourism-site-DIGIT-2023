@@ -20,7 +20,7 @@
 }
 
 .signinBtn {
-  box-shadow: 0px -1px 10px #171717;
+  border-top: solid white 2px;
 }
 
 input{
