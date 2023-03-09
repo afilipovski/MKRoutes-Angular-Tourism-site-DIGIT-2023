@@ -14,7 +14,7 @@
         </div>
         <div class="flex row justify-between mb-2 px-3">
           <h1 class="mr-2 text-white">Password </h1>
-          <input class="rounded" type="text" [(ngModel)] = "password">
+          <input class="rounded" type="password" [(ngModel)] = "password">
         </div>
         <div class="text-2xl text-white" *ngIf="errMsg">{{errMsg}}</div>
         <button (click)="login()" class="p-3 mt-2 logoutButton2 signinBtn text-white">Log in</button>

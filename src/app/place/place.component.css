@@ -1,5 +1,5 @@
 #full-page-container {
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     position: relative;
     display: flex;
@@ -17,4 +17,18 @@ main {
 .text h1{
     color: rgb(223, 217, 217);
     -webkit-text-stroke: 0.5px black;
+}
+
+.dataContainer {
+    width: 90vw;
+    padding-inline: 5vw;
+    margin-inline: auto;
+}
+.left {
+    flex-basis: 40vw;
+    flex-shrink: 1;
+}
+#bookmark {
+    position: absolute;
+    left: 0;
 }

@@ -38,7 +38,7 @@ export class NavbarComponent {
 
   search() {
     if (this.onMainPage) {
-      this.scroll('topDiv');
+      this.scroll('phony');
     }
     else {
       this.searchEnabled = !this.searchEnabled;
