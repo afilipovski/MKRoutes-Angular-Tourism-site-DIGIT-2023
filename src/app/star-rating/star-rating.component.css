@@ -17,5 +17,14 @@ span {
     background: white;
 }
 button {
-    background: red;
+    background: #171717;
+    color: white;
+    padding: 8px;
+    border-radius: 0.5rem;
+}
+textarea {
+  resize: none;
+}
+mat-form-field{
+  height: 15rem;
 }

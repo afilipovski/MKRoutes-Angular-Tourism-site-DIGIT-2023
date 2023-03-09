@@ -26,8 +26,8 @@ main {
     flex-basis: 40vw;
     flex-shrink: 1;
 }
-#bookmark {
-    height: 100%;
+#bookmark{
+  color: white;
 }
 #citiesDiv{
   background-color: #171717;

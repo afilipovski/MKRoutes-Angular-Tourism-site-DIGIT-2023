@@ -1,13 +1,13 @@
 <app-navbar></app-navbar>
 <div *ngIf="placeDetails" style="background-image: linear-gradient(rgba(23,23,23,0.3), rgba(255,255,255,0.3)) ,url({{placeDetails.img}});" id="full-page-container" class="flex">
-  <div class="rounded flex flex-wrap dataContainer frosted w-fit p-4 justify-between">
-      <div class="flex flex-col left basis-3/4">
-        <div class="basic flex flex-row justify-between">
-            <mat-icon id="bookmark" fontIcon="{{bookmarked ? 'bookmark' : 'bookmark_outline'}}" (click)="toggleBookmark()" fontIcon="bookmark_outline" class=""></mat-icon>
-            <h1 class="text-5xl font-bold">{{placeDetails.name}}</h1>
+  <div class="rounded flex flex-wrap dataContainer frosted w-fit p-4 justify-between align-center">
+      <div class="flex flex-col left basis-3/4 text-white">
+        <div class="basic flex flex-row justify-between rounded">
+            <div class="flex flex-col justify-center"><mat-icon id="bookmark" fontIcon="{{bookmarked ? 'bookmark' : 'bookmark_outline'}}" (click)="toggleBookmark()" fontIcon="bookmark_outline"></mat-icon></div>
+            <div class="flex flex-col justify-center"><h1 class="text-5xl font-bold h-fit">{{placeDetails.name}}</h1></div>
             <app-weather *ngIf="placeDetails.lat && placeDetails.lon" [lat]="placeDetails.lat" [lon]="placeDetails.lon"></app-weather>
         </div>
-          <p>{{placeDetails.desc}}</p>
+          <p class="mt-2 basic pr-4">{{placeDetails.desc}}</p>
           <button *ngIf="placeDetails.link">
               <a href="{{placeDetails.link}}">Book your stay</a>
           </button>

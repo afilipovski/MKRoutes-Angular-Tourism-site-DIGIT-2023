@@ -5,3 +5,7 @@
 img {
     width: 40px;
 }
+
+.minW {
+  min-width: 8rem;
+}
