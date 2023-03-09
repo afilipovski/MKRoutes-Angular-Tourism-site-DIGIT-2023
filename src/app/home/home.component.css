@@ -55,7 +55,25 @@ header {
   object-fit: cover;
   z-index: -1;
   transform: translateZ(-10px) scale(2.5);
-  font-size: 3vw;
+  font-size: 30px;
   font-weight: bold;
 }
 
+@media (max-width: 900px) {
+  .background-text {
+    font-size: 25px;
+  }
+}
+@media (max-width: 900px) {
+  .background-text {
+    font-size: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .background-text {
+    text-align: center;
+    top: 0%;
+    font-size: 60px;
+    transform: translateZ(-5px)
+  }
+}

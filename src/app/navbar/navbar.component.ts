@@ -31,4 +31,19 @@ export class NavbarComponent {
     let el = document.getElementById(id);
     if (el != null) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+
+  @Input() onMainPage : boolean = false;
+  searchEnabled : boolean = false;
+
+  search() {
+    if (this.onMainPage) {
+      this.scroll('phony');
+    }
+    else {
+      this.searchEnabled = !this.searchEnabled;
+      console.log(this.searchEnabled);
+      
+    }
+  }
 }
