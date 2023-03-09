@@ -1,14 +1,17 @@
+<app-navbar [displayScroll]="false"></app-navbar>
 <div class="fpbp">
-  <app-navbar [displayScroll]="false"></app-navbar>
-  <div class="flex flex-wrap">
-    <div *ngIf="!bookmarkedPlaces.length">
-        <h1>No bookmarks yet</h1>
+  <div class="">
+    <h1 *ngIf="bookmarkedPlaces.length" class="text-white w-fit pt-16 mx-auto text-5xl text-center">Your Bookmarks</h1>
+    <div class="flex flex-wrap pt-8 mx-auto justify-center">
+      <div *ngIf="!bookmarkedPlaces.length">
+        <h1 class="text-white w-fit pt-16 mx-auto text-5xl text-center">No bookmarks yet</h1>
+      </div>
+      <app-single-card
+        *ngFor="let place of bookmarkedPlaces"
+        [place]="place"
+        [navigateOnClick]="true"
+      ></app-single-card>
     </div>
-    <app-single-card
-      *ngFor="let place of bookmarkedPlaces"
-      [place]="place"
-      [navigateOnClick]="true"
-    ></app-single-card>
   </div>
   <!-- <app-location-cards class="mt" [locations]="bookmarkedPlaces" filter="njefnei"></app-location-cards> -->
 </div>
