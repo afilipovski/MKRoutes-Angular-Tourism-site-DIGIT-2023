@@ -1,19 +1,30 @@
 <div id="container" class="flex row justify-between bgNav fixed top-0 z-50">
   <div>
-    <a class="text-white ml-[10px]"><strong>↑</strong>our Macedonia</a>
+    <!--<a class="text-white ml-[10px]"><strong>↑</strong>our Macedonia</a>-->
+    <img id="logo" src="../../assets/logo.svg" />
   </div>
   <div class="flex row justify-end">
     <button
       (mouseover)="signInVisible = true"
       (mouseleave)="signInVisible = false"
-      class="flex flex-col justify-center mr-[8px]" title="User">
-      <img src="assets/account.svg"/>
+      class="flex flex-col justify-center mr-[8px]"
+      title="User"
+    >
+      <img src="assets/account.svg" />
       <app-signin *ngIf="signInVisible"></app-signin>
     </button>
-    <button class="mr-[8px]" title="Search locations">
+    <button
+      class="mr-[8px]"
+      title="Search locations"
+      (click)="scroll('topDiv')"
+    >
       <img src="assets/search2.svg" />
     </button>
-    <button class="mr-[10px]" title="Explore locations">
+    <button
+      class="mr-[10px]"
+      title="Explore locations"
+      (click)="scroll('citiesDiv')"
+    >
       <img src="assets/cities2.svg" />
     </button>
   </div>

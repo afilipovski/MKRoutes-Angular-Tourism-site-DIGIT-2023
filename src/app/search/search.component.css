@@ -1,7 +1,7 @@
 #resultContainer:empty {
   display: none;
 }
-#resultContainer{
+#resultContainer {
   font-family: Manrope;
   font-size: 40px;
   text-align: center;
@@ -12,28 +12,28 @@
 }
 
 p:hover {
-  background-image: linear-gradient(90deg,
-  rgba(255, 255, 255, 0.1),
-  rgba(15, 43, 54, 0.4),
-  rgba(255, 255, 255, 0.1)
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(15, 43, 54, 0.4),
+    rgba(255, 255, 255, 0.1)
   );
   border-radius: 0.5rem;
 }
-#resultContainer p:last-child{
+#resultContainer p:last-child {
   border-bottom: none;
 }
-input{
-  background-color: rgba(0,0,0,0);
+input {
+  background-color: rgba(0, 0, 0, 0);
   font-family: Manrope;
   text-align: center;
-  width: 75vw;
-  height: 10vh;
+  width: 67vw;
+  height: 9vh;
   font-size: 4vh;
   outline: none;
   color: white;
 }
-input::placeholder{
+input::placeholder {
   text-align: center;
-  color: rgba(23, 23, 23, 0.2);
-
+  color: rgba(255, 255, 255, 0.3);
 }
