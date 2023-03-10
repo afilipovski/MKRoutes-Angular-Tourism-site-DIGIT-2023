@@ -1,5 +1,5 @@
 #full-page-container {
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     position: relative;
     display: flex;
@@ -11,24 +11,49 @@ main {
     padding: 20px 60px;
     margin: auto;
 }
-.basic>* {
-    margin: 0 20px
-}
 .text h1{
     color: rgb(223, 217, 217);
     -webkit-text-stroke: 0.5px black;
 }
 
 .dataContainer {
-    width: 90vw;
+    margin-top: 45px;
+    width: 100vw;
+    gap: 20px;
+}
+.nameContainer {
+    gap: 10px;
 }
 .left {
-    flex-basis: 40vw;
+    flex-basis: 53vw;
     flex-shrink: 1;
+    flex-grow: 0.7;
+    margin-left: 40px;
+    max-width: min(90vw, 450px);
 }
 #bookmark{
   color: white;
+  position: absolute;
+  left: -50px;
+  top: 6px;
+}
+mat-icon {
+    height: 35px;
+    width: 35px;
+    font-size: 35px;
 }
 #citiesDiv{
   background-color: #171717;
+}
+h1 {
+    position: relative;
+}
+
+button {
+    background: #171717;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 0.5rem;
+    margin-top: 8px;
+    margin-right: auto;
 }

@@ -1,37 +1,67 @@
 <app-navbar></app-navbar>
-<div *ngIf="placeDetails" style="background-image: linear-gradient(rgba(23,23,23,0.3), rgba(255,255,255,0.3)) ,url({{placeDetails.img}});" id="full-page-container" class="flex">
-  <div class="rounded flex flex-wrap dataContainer frosted w-fit p-4 justify-between align-center">
-      <div class="flex flex-col left basis-3/4 text-white">
-        <div class="basic flex flex-row justify-between rounded">
-            <div class="flex flex-col justify-center"><mat-icon id="bookmark" fontIcon="{{bookmarked ? 'bookmark' : 'bookmark_outline'}}" (click)="toggleBookmark()" fontIcon="bookmark_outline"></mat-icon></div>
-            <div class="flex flex-col justify-center"><h1 class="text-5xl font-bold h-fit">{{placeDetails.name}}</h1></div>
-            <app-weather *ngIf="placeDetails.lat && placeDetails.lon" [lat]="placeDetails.lat" [lon]="placeDetails.lon"></app-weather>
+<div
+  *ngIf="placeDetails"
+  style="background-image: linear-gradient(rgba(23,23,23,0.3), rgba(255,255,255,0.3)) ,url({{placeDetails.img}});"
+  id="full-page-container"
+  class="flex"
+>
+  <div
+    class="rounded flex flex-wrap dataContainer frosted w-fit p-4 justify-center align-center"
+  >
+    <div class="flex flex-col left basis-3/4 text-white">
+      <div class="basic flex flex-row justify-between rounded nameContainer flex-wrap">
+        <div class="flex flex-col justify-center">
+          <h1 class="text-5xl font-bold h-fit">
+            <div id="bookmark" class="flex flex-col justify-center">
+              <mat-icon
+                fontIcon="{{ bookmarked ? 'bookmark' : 'bookmark_outline' }}"
+                (click)="toggleBookmark()"
+                fontIcon="bookmark_outline"
+              ></mat-icon>
+            </div>
+            {{ placeDetails.name }}
+          </h1>
         </div>
-          <p class="mt-2 basic pr-4">{{placeDetails.desc}}</p>
-          <button *ngIf="placeDetails.link">
-              <a href="{{placeDetails.link}}">Book your stay</a>
-          </button>
+        <app-weather
+          *ngIf="placeDetails.lat && placeDetails.lon"
+          [lat]="placeDetails.lat"
+          [lon]="placeDetails.lon"
+        ></app-weather>
       </div>
-      <div>
-      <app-star-rating
-      [placeName]="placeName"
-      class=""></app-star-rating>
-      </div>
+      <p class="mt-2 basic pr-4">{{ placeDetails.desc }}</p>
+      <button *ngIf="placeDetails.link">
+        <a href="{{ placeDetails.link }}">Book your stay >></a>
+      </button>
     </div>
+    <div>
+      <app-star-rating [placeName]="placeName"></app-star-rating>
+    </div>
+  </div>
 </div>
-<div class="detailed-view" id="citiesDiv" class="border-t-4 border-white" *ngIf="sights.length">
-    <!-- [locations]="cities"
+<div
+  class="detailed-view"
+  id="citiesDiv"
+  class="border-t-4 border-white"
+  *ngIf="sights.length"
+>
+  <!-- [locations]="cities"
       [(selectedLocation)]="selectedCity"
       filter="city" -->
-    <h1 class="text-white w-fit pt-16 mx-auto text-5xl text-center mb-8">Sights</h1>
-    <app-location-cards class="flex flex-wrap pt-8 mx-auto justify-center"
+  <h1 class="text-white w-fit pt-16 mx-auto text-5xl text-center mb-8">
+    Sights
+  </h1>
+  <app-location-cards
+    class="flex flex-wrap pt-8 mx-auto justify-center"
     [locations]="sights"
     [navigateOnClick]="true"
-    ></app-location-cards>
-    <h1 class="text-white w-fit pt-16 mx-auto text-5xl text-center mb-8">Accommodation</h1>
-    <app-location-cards class="flex flex-wrap pt-8 pb-8 mx-auto justify-center"
+  ></app-location-cards>
+  <h1 class="text-white w-fit pt-16 mx-auto text-5xl text-center mb-8">
+    Accommodation
+  </h1>
+  <app-location-cards
+    class="flex flex-wrap pt-8 pb-8 mx-auto justify-center"
     [locations]="accommodation"
     [navigateOnClick]="true"
     filter="accommodation"
-    ></app-location-cards>
+  ></app-location-cards>
 </div>

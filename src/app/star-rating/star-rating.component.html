@@ -1,9 +1,9 @@
 <div class="bg-white rounded h-fit p-3 flex flex-col justify-between">
   <div class="container" (click)="clickEvent()" (mouseleave)="hoverEvent(rating)">
-    <div *ngIf="avgRating" class="flex flex-row justify-between ">
-      <div><strong>{{avgRating.numReviews}}</strong> Reviews</div>
+    <div class="flex flex-row justify-between ">
+      <div><strong>{{avgRating ? avgRating.numReviews : 0}} </strong>{{avgRating && avgRating.numReviews === 1 ? "Review" : "Reviews"}}</div>
         <div class="flex flex-row">
-        <div>{{avgRating.avg}}/5</div>
+        <div>{{avgRating ? avgRating.avg : "NA"}}/5</div>
         <mat-icon fontIcon="star" class="ml-2"></mat-icon>
         </div>
     </div>

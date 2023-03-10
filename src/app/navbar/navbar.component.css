@@ -56,6 +56,7 @@ app-search {
   right: 0; 
   margin-left: auto; 
   margin-right: auto; 
+  margin-top: -42vh;
   width: 67vw; /* Need a specific value to work */
   top: 50px;
 }
