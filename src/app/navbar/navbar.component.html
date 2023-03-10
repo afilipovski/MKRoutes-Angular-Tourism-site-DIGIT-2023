@@ -4,21 +4,21 @@
     <img routerLink="/" id="logo" src="../../assets/logo.svg" />
   </div>
   <div class="flex row justify-end">
-    <app-search *ngIf="searchEnabled"></app-search>
+    <app-search (click)="onSearchClick($event)" *ngIf="searchEnabled"></app-search>
     <button
-      (click)="toggle($event)"
+      (click)="signInButtonClick($event)"
       class="flex flex-col justify-center mr-[8px]"
       title="User"
     >
       <img src="assets/account.svg" />
-      <div (click) = "onDivClick($event)" id="signIn">
+      <div (click) = "onSignInClick($event)" id="signIn">
         <app-signin #signIn *ngIf="signInVisible"></app-signin>
       </div>
     </button>
     <button
       class="mr-[8px]"
       title="Search locations"
-      (click)="search()"
+      (click)="search($event)"
     >
       <img src="assets/search2.svg" />
     </button>

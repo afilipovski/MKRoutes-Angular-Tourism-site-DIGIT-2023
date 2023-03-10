@@ -13,19 +13,29 @@ export class NavbarComponent {
 
   signInVisible: boolean = false;
 
-
+  // BUBBLING
 
   onDocumentClick(event : any) {
     this.signInVisible = false;  
+    this.searchEnabled = false;
   }
-  onDivClick(event : any) {
+  // Sign in div click disables the search
+  onSignInClick(event : any) {
+    this.searchEnabled = false;
     event.stopPropagation();
   }
-
-  toggle(event : any) {
+  // Search div click disables sign in
+  onSearchClick(event : any) {
+    this.signInVisible = false;
+    event.stopPropagation();
+  }
+  // Click on sign in button toggles it
+  signInButtonClick(event : any) {
     this.signInVisible = !this.signInVisible;
+    this.searchEnabled = false;
     event.stopPropagation();
   }
+  // Click on search button toggles it
 
   scroll(id: string) {
     let el = document.getElementById(id);
@@ -36,14 +46,15 @@ export class NavbarComponent {
   @Input() onMainPage : boolean = false;
   searchEnabled : boolean = false;
 
-  search() {
+  search(event : any) {
+    this.signInVisible = false;
     if (this.onMainPage) {
       this.scroll('topDiv');
     }
     else {
       this.searchEnabled = !this.searchEnabled;
       console.log(this.searchEnabled);
-      
     }
+    event.stopPropagation();
   }
 }

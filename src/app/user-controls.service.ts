@@ -63,17 +63,24 @@ export class UserControlsService {
   }
   async getStars(placeName: string) : Promise<any> {
     let ref = this.afd.database.ref(`ratings/${placeName}`);
-    let data : number[] = Object.values((await ref.get()).exportVal());
 
-    if (!data.length) {
-      return null;
-    }
-    console.log(data);
+    let rawData = await ref.get();
     
-    return {
-      avg: data.reduce((a,b) => a + b, 0) / data.length,
-      numReviews: data.length
-    }
+    if (rawData.exists()) {
+      let data : number[] = Object.values(rawData.exportVal());
+
+      
+
+      if (!data.length) {
+        return null;
+      }
+      console.log(data);
+      
+      return {
+        avg: data.reduce((a,b) => a + b, 0) / data.length,
+        numReviews: data.length
+      }
+    } else return null;
   }
   setStars(uid: string | null | undefined, placeName: string, value:number) : Promise<any> {
     let ref = this.afd.database.ref(`${uid}/${placeName}/reviewStars`);

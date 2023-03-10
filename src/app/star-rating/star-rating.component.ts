@@ -75,7 +75,19 @@ export class StarRatingComponent {
 
   getAvgRating() {
     this.ucs.getStars(this.placeName).then(ar => {
+      console.log(ar);
+      
       this.avgRating = ar;
+    })
+  }
+
+  ngOnChanges() {
+    this.getAvgRating();
+    this.ucs.getPlaceDetails(this.uid, this.placeName).then(review => {
+        
+      this.rating = this.tempRating = review.reviewStars;
+      this.text = review.reviewText;
+      
     })
   }
 }

@@ -49,10 +49,8 @@ export class SingleCardComponent {
   }
 
   click() {
-    console.log(this.navigateOnClick);
     
     if (this.navigateOnClick) {
-      console.log("NAVIGIRA");
       
       this.router.navigate([`/place/${this.place.name.toLowerCase()}`])
     }
