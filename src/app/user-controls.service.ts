@@ -75,15 +75,17 @@ export class UserControlsService {
       numReviews: data.length
     }
   }
-  setStars(uid: string | null | undefined, placeName: string, value:number) {
+  setStars(uid: string | null | undefined, placeName: string, value:number) : Promise<any> {
     let ref = this.afd.database.ref(`${uid}/${placeName}/reviewStars`);
-    ref.set(value);
+    let p1 = ref.set(value);
 
     let cumulativeRatingRef = this.afd.database.ref(`ratings/${placeName}/${uid}`);
-    cumulativeRatingRef.set(value);
+    let p2 = cumulativeRatingRef.set(value);
+
+    return Promise.all([p1,p2]);
   }
-  setText(uid: string | null | undefined, placeName: string, value:string) {
+  setText(uid: string | null | undefined, placeName: string, value:string) : Promise<any> {
     let ref = this.afd.database.ref(`${uid}/${placeName}/reviewText`);
-    ref.set(value);
+    return ref.set(value);
   }
 }

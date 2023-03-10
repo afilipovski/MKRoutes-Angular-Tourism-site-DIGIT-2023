@@ -42,11 +42,14 @@ export class StarRatingComponent {
       return;
     }
     this.editable = !this.editable;
+
+    let promises : Promise<any>[] = [];
+
     if (!this.editable) {
-      this.ucs.setStars(this.uid, this.placeName, this.rating);
-      this.ucs.setText(this.uid, this.placeName, this.text);
+      promises.push(this.ucs.setStars(this.uid, this.placeName, this.rating));
+      promises.push(this.ucs.setText(this.uid, this.placeName, this.text));
     }
-    this.getAvgRating();
+    Promise.all(promises).then(() => this.getAvgRating());
   }
 
   constructor(
