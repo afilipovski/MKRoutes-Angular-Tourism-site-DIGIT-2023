@@ -33,6 +33,9 @@ export let gradovi: IGrad[] = [
     bgImage:
       'https://upload.wikimedia.org/wikipedia/commons/d/d7/Bitola_05.JPG',
     desc: 'Bitola offers you absolute zero stress and a spirit of well-being. This is a warm invite to feel the mixture of the East and the West, to reinvent your term of taste due to the culinary delights that city restaurants offer, and to be part of a very typical and vibrant local lifestyle.',
+
+    sights: ['Saat Kula', 'Shirok Sokak'],
+    accommodation: ['Bela Kukja Hotel', 'Hotel Threatre', 'Somnia'],
   },
   {
     name: 'Ohrid',
@@ -43,15 +46,41 @@ export let gradovi: IGrad[] = [
     bgImage:
       'https://i0.wp.com/www.thebalkansandbeyond.com/wp-content/uploads/2021/07/Things-to-do-in-Ohrid-View.png?fit=2240%2C1260&ssl=1',
     desc: `Sublime Ohrid is North Macedonia's most seductive destination. It sits on the edge of serene Lake Ohrid, with an atmospheric old quarter that cascades down steep streets, dotted with beautiful churches and topped by the bones of a medieval castle. Traditional restaurants and lakeside cafes liven up the cobblestone streets, which in high summer can be very lively indeed.`,
+    sights: ['Saint Sophia', 'Ancient theatre', 'Bay of Bones'],
+    accommodation: ['Inex Olgica'],
+  },
+  {
+    name: 'Saint Sophia',
+    type: 'sight',
+    img: 'https://static.wixstatic.com/media/37d0c7_7ae1289f25824d32a00474c91a29def8~mv2.jpg/v1/fill/w_2500,h_1655,al_c/37d0c7_7ae1289f25824d32a00474c91a29def8~mv2.jpg',
+    desc: 'The Church of Saint Sophia is a church in Ohrid, North Macedonia. The church is one of the most important monuments of North Macedonia, housing architecture and art from the Middle Ages.',
+  },
+  {
+    name: 'Ancient theatre',
+    type: 'sight',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Antiguo_teatro_griego%2C_Ohrid%2C_Macedonia%2C_2014-04-17%2C_DD_59.JPG',
+    desc: 'The Ancient theatre of Ohrid of the Hellenistic period is located in Ohrid, North Macedonia. It was built in 200 BC and is the only Hellenistic-type theatre in the country as the other three in Scupi, Stobi and Heraklea Lynkestis are from Roman times',
+  },
+  {
+    name: 'Bay of Bones',
+    type: 'sight',
+    img: 'https://experience-macedonia.com/wp-content/uploads/2019/04/bayofbones1bn.jpg',
+    desc: 'Replica of ancient lakeside settlement',
+  },
+  {
+    name: 'Inex Olgica',
+    type: 'accommodation',
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/323036146.jpg?k=9eb90a58d78871c7b68afc7d982f60c1f3f5b8bec964c35d136bfded0ceb9de3&o=&hp=1',
+    desc: 'Inex Olgica Hotel & SPA is situated on the shore of the Ohrid Lake, 4 km away from Ohrid and a 10-minute drive from Ohrid Airport. Guests benefit from the free WiFi and free parking on site.',
+    link: 'https://www.booking.com/hotel/mk/inex-gorica.en-gb.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaJMBiAEBmAEJuAEHyAEM2AEB6AEB-AEMiAIBqAIDuAKcxaygBsACAdICJDNhOWE4YjBlLWJjN2MtNDM3My04YzkzLWYzODQ3OTQ1YjE3MNgCBuACAQ&sid=ca3ee2eae1c4545cc9254e08a510e7cf&dest_id=-90608&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=class&srepoch=1678453623&srpvid=b1405c35dfb400f7&type=total&ucfs=1&activeTab=main',
   },
   {
     name: 'Mavrovo',
     type: 'city',
     lat: 41.6549,
     lon: 20.7339,
-    img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/211372208.jpg?k=0eba18fae0e649d25715c67feb33515d7951461337fe068cce392f4326ba53cd&o=&hp=1',
-    bgImage:
-      'https://www.wallpaperflare.com/static/973/319/739/entre-neige-et-brouillard-wallpaper.jpg',
+    img: 'https://lcc-altavia.com/wp-content/uploads/sites/39/2022/01/269611366_3124010511147037_5574381464719649217_n.jpg',
+    bgImage: 'https://macedonia-timeless.com/img/bgs/Mavrovo%20cover.jpg',
     desc: `Discovering the beauties of nature and exploring impeccable scenery, Macedonian customs, and traditional cuisine, you find yourself in Mavrovo .Set in the breathtaking scenery, amid grassy plateaus and snowy peaks of the mountainous region of western Macedonia, it is the frosting of the cake called the Macedonian outdoor experience.`,
   },
   {
@@ -62,7 +91,7 @@ export let gradovi: IGrad[] = [
     img: 'https://pix10.agoda.net/geo/city/665594/1_665594_04.jpg?ca=7&ce=1&s=1920x822',
     bgImage:
       'https://upload.wikimedia.org/wikipedia/commons/b/b5/Dojran_Lake_50.jpg',
-    desc: '',
+    desc: 'Dojran was a city on the west shore of Lake Dojran in the southeast part of North Macedonia. Today, it is a collective name for two villages on the territory of the ruined city: Nov Dojran and Star Dojran, which contains both old ruins and recent construction, especially hotels, resorts, and restaurants.',
   },
   {
     name: 'Prespa',
@@ -72,7 +101,7 @@ export let gradovi: IGrad[] = [
     img: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Lake_Prespa_from_Slivnica_Monastery_01.JPG',
     bgImage:
       'https://upload.wikimedia.org/wikipedia/commons/9/97/54_1_%D0%BE%D0%B7%D0%B5%D1%80%D0%BE_%D0%9F%D1%80%D0%B5%D1%81%D0%BF%D0%B0.jpg',
-    desc: '',
+    desc: 'The Lake Prespa is located on the tripoint of North Macedonia, Albania, and Greece. It is a system of two lakes separated by an isthmus: the Great Prespa Lake, divided between the three countries, and the Little Prespa Lake, mostly within Greece.',
   },
   {
     name: 'Old Bazaar',
@@ -89,7 +118,7 @@ export let gradovi: IGrad[] = [
   {
     name: 'Skopje Fortress',
     type: 'sight',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/%D0%A1%D0%9A_Old_Bridge%2C_Skopje_%2833745349220%29.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/KaleFortress-Skopje1.JPG',
     desc: 'Kale fortress has the dominant place in Skopje. It was built of stone blocks from the ruins of the city of Scupi, during the rule of the Byzantium Emperor Justinijan the 1st.',
   },
   {
@@ -115,13 +144,46 @@ export let gradovi: IGrad[] = [
   {
     name: 'Hotel City Park',
     type: 'accommodation',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/%D0%A1%D0%9A_Old_Bridge%2C_Skopje_%2833745349220%29.jpg',
-    desc: 'With all of its perfections and flaws, Skopje is a city like no other. We grew up here, we live here, we work here.. All of our memories with the people we care the most about are created on the streets of Skopje. We are proud of the city with inexhaustible energy. The city that almost never sleeps. The wonderful squares, the biggest monument on the Balkan Peninsula, the City Park, Vodno and Matka, the Vrelo caves, the way Vardar cuts it in half, the Millenium cross, the Old town bazaar, the Kale fortress .. all of these represent a certain period and tell a different story of the capital city of the land of the sun.',
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/57659365.jpg?k=669e6816ef14bd7fe65292d83046e7ce7a6eb07ea04459929d56189ebd0c2004&o=&hp=1',
+    desc: 'Located next to the famous "Debar Maalo" area full of life and traditional restaurants, 150 m for the National Football Arena and next to the Governor of Skopje offices, the stylish City Park Hotel offers you elegant rooms with park views.',
   },
   {
     name: 'Hotel Karpos',
     type: 'accommodation',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/%D0%A1%D0%9A_Old_Bridge%2C_Skopje_%2833745349220%29.jpg',
-    desc: 'With all of its perfections and flaws, Skopje is a city like no other. We grew up here, we live here, we work here.. All of our memories with the people we care the most about are created on the streets of Skopje. We are proud of the city with inexhaustible energy. The city that almost never sleeps. The wonderful squares, the biggest monument on the Balkan Peninsula, the City Park, Vodno and Matka, the Vrelo caves, the way Vardar cuts it in half, the Millenium cross, the Old town bazaar, the Kale fortress .. all of these represent a certain period and tell a different story of the capital city of the land of the sun.',
+    img: 'https://live.staticflickr.com/3134/3133454711_930abd5f6b_b.jpg',
+    desc: 'Hotel Karpos is a four-star hotel with 59 spacious rooms and suites. All rooms have self control air conditioning, direct telephone line, internet access, fire protection system, mini bar, coffee/tea facilities, satellite TV, bath and hairdryer. The hotel has restaurant, two conference rooms, fitness center/sauna and underground parking garage.',
+  },
+  {
+    name: 'Saat Kula',
+    type: 'sight',
+    img: 'https://img.itinari.com/activity/images/original/cdc6acb0-e7f0-4b99-ac99-f82775ba7318-istock-646725852.jpg?ch=DPR&dpr=2.625&w=1200&h=800&s=096f2f24b20a0a7777468b94c558d53e',
+    desc: 'The Clock Tower of Bitola, known as Saat Kula, is a clock tower and one of the landmarks of the Macedonian city of Bitola. The clock tower in Bitola is a very practical monument aiding people with the time of day.',
+  },
+  {
+    name: 'Shirok Sokak',
+    type: 'sight',
+    img: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/f3/8f/93/ciekawe-budynki.jpg?w=1200&h=-1&s=1',
+    desc: 'Širok Sokak is a long pedestrian street in Bitola, North Macedonia. The street is considered to be the centre of Bitola. It roughly starts at Magnolia Square and ends in the City Park. It is graced with neo-classical buildings that contain stores, cafés and restaurants.',
+  },
+  {
+    name: 'Bela Kukja Hotel',
+    type: 'accommodation',
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/320765725.jpg?k=5cca147163a9ea8b807624a16fa907016830db8a42ad8ddca52767bac43b2d90&o=&hp=1',
+    desc: 'Situated in Bitola, 300 m from the Main Square, Bela Kuka Hotel offers free WiFi, free air conditioning and a garden. A bus stop is 120 m away, while Shirok Sokak street with its many cafes and shops is 30 m away.',
+    link: 'https://www.booking.com/hotel/mk/bela-kuka.en-gb.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaJMBiAEBmAEJuAEHyAEM2AEB6AEB-AEMiAIBqAIDuAKcxaygBsACAdICJDNhOWE4YjBlLWJjN2MtNDM3My04YzkzLWYzODQ3OTQ1YjE3MNgCBuACAQ&sid=ca3ee2eae1c4545cc9254e08a510e7cf&dest_id=-75269&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&hpos=2&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1678451365&srpvid=a6f157d2fca9005d&type=total&ucfs=1&activeTab=main',
+  },
+  {
+    name: 'Hotel Threatre',
+    type: 'accommodation',
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/334519272.jpg?k=dbc62e041c88066eca84a8929c6fd4cc57becacf0c89ee1d6017113c26d34f81&o=&hp=1',
+    desc: 'Centrally located in Bitola, in a quiet residential area, Hotel Theatre offers air-conditioned rooms with free WiFi. Free public parking is available on site and free private parking can be found 50 m away from the property.',
+    link: 'https://www.booking.com/hotel/mk/teatar.en-gb.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaJMBiAEBmAEJuAEHyAEM2AEB6AEB-AEMiAIBqAIDuAKcxaygBsACAdICJDNhOWE4YjBlLWJjN2MtNDM3My04YzkzLWYzODQ3OTQ1YjE3MNgCBuACAQ&sid=ca3ee2eae1c4545cc9254e08a510e7cf&dest_id=-75269&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&hpos=5&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1678451365&srpvid=a6f157d2fca9005d&type=total&ucfs=1&activeTab=main',
+  },
+  {
+    name: 'Somnia',
+    type: 'accommodation',
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/156648226.jpg?k=7ffee84fef339e5a97aca77d32a328ba3f5be5e4c3933e40e52ea7b3ed630ddc&o=&hp=1',
+    desc: 'Somnia is set in Bitola. Free WiFi is offered throughout the property.Every unit has a private bathroom and shower, air conditioning, a flat-screen TV and a fridge. Some units feature a terrace and/or a balcony with city or mountain views.',
+    link: 'https://www.booking.com/hotel/mk/somnia.en-gb.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaJMBiAEBmAEJuAEHyAEM2AEB6AEB-AEMiAIBqAIDuAKcxaygBsACAdICJDNhOWE4YjBlLWJjN2MtNDM3My04YzkzLWYzODQ3OTQ1YjE3MNgCBuACAQ&sid=ca3ee2eae1c4545cc9254e08a510e7cf&dest_id=-75269&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&hpos=3&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1678452055&srpvid=76b9592b39df0114&type=total&ucfs=1&activeTab=main',
   },
 ];
