@@ -75,6 +75,7 @@ export class StarRatingComponent {
 
   getAvgRating() {
     this.ucs.getStars(this.placeName).then(ar => {
+      ar.avg = Math.round(ar.avg*100) / 100
       this.avgRating = ar;
     })
   }
