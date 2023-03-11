@@ -53,7 +53,6 @@ export class UserControlsService {
       })
     } else {
       this.getLogs(uid).then(array => {
-        console.log(array);
         
         array = array.filter((log: { place: string; }) => log.place !== placeName)
         logsRef.set(array);
@@ -74,7 +73,6 @@ export class UserControlsService {
       if (!data.length) {
         return null;
       }
-      console.log(data);
       
       return {
         avg: data.reduce((a,b) => a + b, 0) / data.length,

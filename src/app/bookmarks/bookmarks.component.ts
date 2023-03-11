@@ -28,7 +28,6 @@ export class BookmarksComponent {
       return gradovi.filter(grad => grad.name.toLowerCase() === log.place)[0]
     })
     
-    console.log(this.bookmarkedPlaces);
   }
 
   ngOnInit() {

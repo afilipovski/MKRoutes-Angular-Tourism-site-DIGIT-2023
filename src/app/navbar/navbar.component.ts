@@ -53,7 +53,6 @@ export class NavbarComponent {
     }
     else {
       this.searchEnabled = !this.searchEnabled;
-      console.log(this.searchEnabled);
     }
     event.stopPropagation();
   }
