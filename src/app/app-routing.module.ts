@@ -7,11 +7,12 @@ import { SignupComponent } from './signup/signup.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent},
   { path: 'search', component: SearchComponent },
   { path: 'place/:id', component: PlaceComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'bookmarks', component: BookmarksComponent }
+  { path: 'bookmarks', component: BookmarksComponent },
+  { path: '**', redirectTo: '/'}
 ];
 
 @NgModule({
