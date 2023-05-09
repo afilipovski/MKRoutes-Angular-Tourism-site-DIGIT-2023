@@ -47,7 +47,9 @@ export class StarRatingComponent {
 
     if (!this.editable) {
       promises.push(this.ucs.setStars(this.uid, this.placeName, this.rating));
-      promises.push(this.ucs.setText(this.uid, this.placeName, this.text));
+      if (this.text) {
+        promises.push(this.ucs.setText(this.uid, this.placeName, this.text));
+      }
     }
     Promise.all(promises).then(() => this.getAvgRating());
   }
@@ -75,7 +77,6 @@ export class StarRatingComponent {
 
   getAvgRating() {
     this.ucs.getStars(this.placeName).then(ar => {
-      ar.avg = Math.round(ar.avg*100) / 100
       this.avgRating = ar;
     })
   }

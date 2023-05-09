@@ -73,9 +73,12 @@ export class UserControlsService {
       if (!data.length) {
         return null;
       }
+
+      let avg = data.reduce((a,b) => a + b, 0) / data.length
+      avg = Math.round(avg*100) / 100;
       
       return {
-        avg: data.reduce((a,b) => a + b, 0) / data.length,
+        avg: avg,
         numReviews: data.length
       }
     } else return null;
